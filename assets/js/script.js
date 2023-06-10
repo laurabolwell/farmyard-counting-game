@@ -4,7 +4,7 @@ let game = {
     currentQuestion: 0,
     questionCount: 0,
     playerAnswer: 0,
-    choices: ["button1", "button2", "button3", "button4", "button5"]
+    choices: ["button-1", "button-2", "button-3", "button-4", "button-5"]
 }
 
 function playGame() {
@@ -12,15 +12,23 @@ function playGame() {
     game.incorrectAnswers = 0;
     game.questionCount = 0
     showScore()
-    //while question count <= 10, newQuestion(), checkAnswer()
+    //check syntax of this: for (i in Range(10)) {
+        playerTurn()
+    }
     
+}
+
+function playerTurn() {
+    newQuestion()
+    displayQuestion()
+    checkAnswer()
+    showScore()
 }
 
 function newQuestion() {
     //??clear player answer?
     //selects random number from 1-5 and assigns it to game.currentQuestion
     game.currentQuestion = Math.floor((Math.random() * 5)+1)
-    //displayQuestion()
 }
 
 function displayQuestion() {
