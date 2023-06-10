@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1 class="heading">Farmyard Counting</h1>
 
-    <div class="game-area">
-
+    <div class="container-fluid game-area">
+        <div class="row">
+            <div class="col-8 question-area">
+            </div>
+            <div class="col-4 options-area">
+                <div class="row"><button id="button1" class="btn">1</button></div>
+                <div class="row"><button id="button2" class="btn">2</button></div>
+                <div class="row"><button id="button3" class="btn">3</button></div>
+                <div class="row"><button id="button4" class="btn">4</button></div>
+                <div class="row"><button id="button5" class="btn">5</button></div>
+            </div>
+        </div>
     </div>
 
     <div class="score-area">
-        <p class="scores">Correct Answers <span id="score">0</span></p>
-        <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+        <div class="row">
+            <div class="col">
+                <p class="scores">Correct Answers <span id="correct">0</span></p>
+            </div>
+            <div class="col">
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            </div>
+        </div>
     </div>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
