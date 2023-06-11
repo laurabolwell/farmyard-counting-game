@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         option.addEventListener("click", function() {
             game.playerAnswer = this.innerText;
             console.log(game.playerAnswer);
+            checkAnswer()
         });
     };
 });
@@ -34,7 +35,6 @@ function playerTurn() {
     newQuestion()
     displayQuestion()
 //    checkAnswer()
-//    giveFeedback()
 //    showScore()
 };
 
@@ -57,11 +57,15 @@ function checkAnswer() {
     //listens for user answer and checks if it is correct
     // if yes increment game.correctAnswers
     // if no increment game.incorrectAnswers
+    let isCorrect = game.currentQuestion == game.playerAnswer;
+    if (isCorrect) {
+        alert("Well done!");
+    } else {
+        alert("Try again")
+    }
 };
 
-function giveFeedback() {
 
-};
 
 function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
