@@ -10,12 +10,11 @@ let game = {
 function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
-    game.questionCount = 0
-    showScore()
-    //check syntax of this: for (i in Range(10)) {
-        playerTurn()
-    }
-    
+    game.questionCount = 0;
+    // showScore();
+    for (let i=0; i<10; i++) {
+        playerTurn();
+    };   
 }
 
 function playerTurn() {
@@ -32,8 +31,8 @@ function newQuestion() {
 }
 
 function displayQuestion() {
-    //takes value selected in newQuestion and displays the required number of pictures
-}
+//takes value selected in newQuestion and displays the required number of pictures
+    }
 
 function checkAnswer() {
     //listens for user answer and checks if it is correct
