@@ -19,7 +19,7 @@
 
     <div class="container-fluid game-area">
         <div class="row">
-            <div class="col-8 question-area">
+            <div class="col-8" id="question-area">
 
             </div>
             <div class="col-4 options-area">
@@ -30,18 +30,18 @@
                 <div class="row"><button id="button-5" class="btn">5</button></div>
             </div>
         </div>
-    </div>
 
-    <div class="score-area">
-        <div class="row">
+        <div class="row score-area">
             <div class="col">
                 <p class="scores">Correct Answers <span id="correct">0</span></p>
             </div>
             <div class="col">
                 <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
             </div>
+            <div class="col"><button class="btn" onclick="playGame()">Reset</button></div>
         </div>
     </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 
