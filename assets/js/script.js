@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let options = document.getElementsByClassName("option");
+
+    for (let option of options) {
+        option.addEventListener("click", function() {
+            game.playerAnswer = this.innerText;
+            console.log(game.playerAnswer);
+        });
+    };
+});
+
 let game = {
     correctAnswers: 0,
     incorrectAnswers: 0,
@@ -11,8 +22,9 @@ function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
+    
     // showScore();
-    playerTurn(); //just for testing, remove and add into loop once checkAnswer function completer
+    playerTurn(); //just for testing, remove and add into loop once checkAnswer function completed
     // for (let i=0; i<10; i++) {
     //     playerTurn();
     // };   
