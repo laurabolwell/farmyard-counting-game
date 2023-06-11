@@ -12,28 +12,34 @@ function playGame() {
     game.incorrectAnswers = 0;
     game.questionCount = 0;
     // showScore();
-    for (let i=0; i<10; i++) {
-        playerTurn();
-    };   
+    playerTurn(); //just for testing, remove and add into loop once checkAnswer function completer
+    // for (let i=0; i<10; i++) {
+    //     playerTurn();
+    // };   
 };
 
 function playerTurn() {
     newQuestion()
     displayQuestion()
-    checkAnswer()
-    giveFeedback()
-    showScore()
+//    checkAnswer()
+//    giveFeedback()
+//    showScore()
 };
 
 function newQuestion() {
-    //??clear player answer?
     //selects random number from 1-5 and assigns it to game.currentQuestion
     game.currentQuestion = Math.floor((Math.random() * 5)+1)
 };
 
-function displayQuestion() {
 //takes value selected in newQuestion and displays the required number of pictures
-    };
+function displayQuestion() {
+    for (let i=0; i<game.currentQuestion; i++) {
+        let questionArea = document.getElementById("question-area")
+        let animal = document.createElement("div");
+        animal.innerHTML = "<img src='assets/images/sheep.png' alt='sheep'>";
+        questionArea.appendChild(animal);
+        }
+};
 
 function checkAnswer() {
     //listens for user answer and checks if it is correct
