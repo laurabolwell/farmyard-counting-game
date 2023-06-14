@@ -23,21 +23,11 @@ function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
-    
-    // showScore();
-    playerTurn(); //just for testing, remove and add into loop once checkAnswer function completed
-    // for (let i=0; i<10; i++) {
-    //     playerTurn();
-    // };   
+    showScore();
+    newQuestion();
 };
 
-function playerTurn() {
-    newQuestion()
-    displayQuestion()
-//    checkAnswer()
-//    showScore()
-};
-
+//clear question-area, selects random number from 1-5 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
     //clear question-area, selects random number from 1-5 and assigns it to game.currentQuestion,
     document.getElementById("question-area").innerHTML = "";
@@ -47,12 +37,12 @@ function newQuestion() {
 
 //takes value selected in newQuestion and displays the required number of pictures
 function displayQuestion() {
-    for (let i=0; i<game.currentQuestion; i++) {
+    for (let i = 0; i < game.currentQuestion; i++) {
         let questionArea = document.getElementById("question-area")
         let animal = document.createElement("div");
         animal.innerHTML = "<img src='assets/images/sheep.png' alt='sheep'>";
         questionArea.appendChild(animal);
-        }
+    }
 };
 
 function checkAnswer() {
@@ -65,8 +55,30 @@ function checkAnswer() {
     } else {
         alert("Try again")
     }
+    updateScore(isCorrect);
+    while (game.questionCount < 10) {
+        newQuestion();
+    }
+    finishGame();
+
 };
 
+function updateScore(isCorrect) {
+    if (isCorrect) {
+        game.correctAnswers++;
+    } else {
+        game.incorrectAnswers++;
+    }
+    game.questionCount = game.correctAnswers + game.incorrectAnswers
+    showScore();
+}
+
+function finishGame() {
+    alert(`You have finished the game.
+    Your score is ${game.correctAnswers} out of ${game.questionCount}`);
+    playGame();
+
+}
 
 
 function showScore() {
