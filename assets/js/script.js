@@ -39,8 +39,10 @@ function playerTurn() {
 };
 
 function newQuestion() {
-    //selects random number from 1-5 and assigns it to game.currentQuestion
-    game.currentQuestion = Math.floor((Math.random() * 5)+1)
+    //clear question-area, selects random number from 1-5 and assigns it to game.currentQuestion,
+    document.getElementById("question-area").innerHTML = "";
+    game.currentQuestion = Math.floor((Math.random() * 5) + 1)
+    displayQuestion()
 };
 
 //takes value selected in newQuestion and displays the required number of pictures
