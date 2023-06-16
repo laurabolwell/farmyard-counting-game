@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    playGame()
     let options = document.getElementsByClassName("option");
 
     for (let option of options) {
@@ -29,7 +30,6 @@ function playGame() {
 
 //clear question-area, selects random number from 1-5 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
-    //clear question-area, selects random number from 1-5 and assigns it to game.currentQuestion,
     document.getElementById("question-area").innerHTML = "";
     game.currentQuestion = Math.floor((Math.random() * 5) + 1)
     displayQuestion()
@@ -56,10 +56,10 @@ function checkAnswer() {
         alert("Try again")
     }
     updateScore(isCorrect);
-    while (game.questionCount < 10) {
+    if (game.questionCount < 10) {
         newQuestion();
-    }
-    finishGame();
+    } else {finishGame();}
+    
 
 };
 
@@ -69,7 +69,7 @@ function updateScore(isCorrect) {
     } else {
         game.incorrectAnswers++;
     }
-    game.questionCount = game.correctAnswers + game.incorrectAnswers
+    game.questionCount = game.correctAnswers + game.incorrectAnswers;
     showScore();
 }
 
@@ -77,8 +77,7 @@ function finishGame() {
     alert(`You have finished the game.
     Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     playGame();
-
-}
+};
 
 
 function showScore() {
