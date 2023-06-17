@@ -10,15 +10,10 @@ let game = {
 
 document.addEventListener("DOMContentLoaded", function() {
     playGame();
-    let options = document.getElementsByClassName("option");
-    for (let option of options) {
-        option.addEventListener("click", function() {
-            game.playerAnswer = this.innerText;
-            checkAnswer()
-        });
-    };
     // set difficulty level here
 });
+
+
 
 function playGame() {
     game.correctAnswers = 0;
@@ -26,6 +21,13 @@ function playGame() {
     game.questionCount = 0;
     document.getElementById("options-area").innerHTML = "";
     displayOptions();
+    let options = document.getElementsByClassName("option");
+    for (let option of options) {
+        option.addEventListener("click", function() {
+            game.playerAnswer = this.innerText;
+            checkAnswer()
+        });
+    };
     showScore();
     newQuestion();
 };
