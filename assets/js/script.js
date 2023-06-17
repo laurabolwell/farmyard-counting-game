@@ -10,7 +10,6 @@ let game = {
 
 document.addEventListener("DOMContentLoaded", function() {
     playGame();
-
     let options = document.getElementsByClassName("option");
     for (let option of options) {
         option.addEventListener("click", function() {
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
             checkAnswer()
         });
     };
-
     // set difficulty level here
 });
 
@@ -26,6 +24,8 @@ function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
+    document.getElementById("options-area").innerHTML = "";
+    displayOptions();
     showScore();
     newQuestion();
 };
@@ -33,11 +33,8 @@ function playGame() {
 //clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
     document.getElementById("question-area").innerHTML = "";
-    document.getElementById("options-area").innerHTML = "";
     game.currentQuestion = Math.floor((Math.random() * game.level) + 1)
-    displayOptions();
     displayQuestion();
-    
 };
 
 //takes value selected in newQuestion and displays the required number of pictures
@@ -74,8 +71,6 @@ function checkAnswer() {
     if (game.questionCount < 10) {
         newQuestion();
     } else {finishGame();}
-    
-
 };
 
 function updateScore(isCorrect) {
@@ -93,7 +88,6 @@ function finishGame() {
     Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     playGame();
 };
-
 
 function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
