@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.heading {
+    height: 10vh;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.game-area {
+    height: 80vh;
+    padding-top:150px;
+    padding-bottom: 50px;
+}
+
+#question-area {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+#options-area {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.score-area {
+    height: 10vh;
+}
+
+
+img {
+    width: 18rem;
+    height: auto;
+}
