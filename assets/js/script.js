@@ -11,6 +11,7 @@ let game = {
 
 document.addEventListener("DOMContentLoaded", function() {
     $('#startGameModal').modal('show');
+    $('#reset').click(playGame());
     playGame();
 });
 
