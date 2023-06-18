@@ -119,15 +119,15 @@ function updateScore(isCorrect) {
     showScore();
 };
 
-function finishGame() {
-    $('#cheerAudio')[0].play();
-    alert(`You have finished the game.
-    Your score is ${game.correctAnswers} out of ${game.questionCount}`);
-    playGame();
-};
-
 function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
     document.getElementById("incorrect").innerText = game.incorrectAnswers;
+};
+
+function finishGame() {
+    $('#cheerAudio')[0].play();
+    $('#endOfGameModal').modal('show');
+    $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
+    $('#play-again').click(playGame());
 };
 

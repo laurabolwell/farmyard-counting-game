@@ -29,6 +29,25 @@
         Menu
     </button>
 
+    <div class="container-fluid game-area">
+        <div class="row">
+            <div class="col-10" id="question-area">
+            </div>
+            <div class="col-2" id="options-area">
+            </div>
+        </div>
+
+        <div class="row score-area">
+            <div class="col">
+                <p class="scores">Correct Answers <span id="correct">0</span></p>
+            </div>
+            <div class="col">
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            </div>
+            <div class="col"><button class="btn" onclick="playGame()">Reset</button></div>
+        </div>
+    </div>
+
     <div class="modal fade" id="startGameModal" tabindex="-1" aria-labelledby="startGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -49,26 +68,26 @@
         </div>
     </div>
 
-    <div class="container-fluid game-area">
-        <div class="row">
-            <div class="col-10" id="question-area">
+    <div class="modal fade" id="endOfGameModal" tabindex="-1" aria-labelledby="endOfGameModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Well done!</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="finalScore"></div>
+                    <div id="stars">
+                        <!-- add stars here  -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="play-again">Play
+                        Again!</button>
+                </div>
             </div>
-            <div class="col-2" id="options-area">
-            </div>
-        </div>
-
-        <div class="row score-area">
-            <div class="col">
-                <p class="scores">Correct Answers <span id="correct">0</span></p>
-            </div>
-            <div class="col">
-                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-            </div>
-            <div class="col"><button class="btn" onclick="playGame()">Reset</button></div>
         </div>
     </div>
 
-    
     <audio id="buttonClickAudio" src="assets/audio/button-click.mp3"></audio>
     <audio id="correctAudio" src="assets/audio/correct.mp3"></audio>
     <audio id="incorrectAudio" src="assets/audio/incorrect.mp3"></audio>
