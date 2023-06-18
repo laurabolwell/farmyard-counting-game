@@ -1,5 +1,5 @@
 let game = {
-    level: 10,
+    level: 5,
     correctAnswers: 0,
     incorrectAnswers: 0,
     currentQuestion: 0,
@@ -8,17 +8,33 @@ let game = {
     choices: ["button-1", "button-2", "button-3", "button-4", "button-5"]
 };
 
+
 document.addEventListener("DOMContentLoaded", function() {
+    $('#startGameModal').modal('show');
     playGame();
-    // set difficulty level here
 });
 
+function setLevel() {
+    difficulty = document.getElementsByClassName("difficulty");
+    for (let level of difficulty) {
+        level.addEventListener("click", function(){
+            if (this.getAttribute("id") === "easy-level") {
+                game.level = 5;
+                playGame();
+            } else if (this.getAttribute("id") === "hard-level") {
+                game.level = 10;
+                playGame();
+            };
+        });
+    };
 
+}
 
 function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
+    setLevel();
     document.getElementById("options-area").innerHTML = "";
     displayOptions();
     let options = document.getElementsByClassName("option");
