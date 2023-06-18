@@ -101,7 +101,7 @@ function checkAnswer() {
     if (isCorrect) {
         playCorrectAudio();
     } else {
-        // playIncorrectAudio();
+        playIncorrectAudio();
     };
     updateScore(isCorrect);
     if (game.questionCount < 10) {
@@ -120,6 +120,7 @@ function updateScore(isCorrect) {
 };
 
 function finishGame() {
+    $('#cheerAudio')[0].play();
     alert(`You have finished the game.
     Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     playGame();
