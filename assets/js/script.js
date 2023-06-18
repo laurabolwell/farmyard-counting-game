@@ -12,7 +12,6 @@ let game = {
 document.addEventListener("DOMContentLoaded", function() {
     $('#startGameModal').modal('show');
     $('#reset').click(playGame());
-    playGame();
 });
 
 function playButtonClickAudio() {
@@ -79,7 +78,11 @@ function displayQuestion() {
     for (let i = 0; i < game.currentQuestion; i++) {
         let questionArea = document.getElementById("question-area")
         let animal = document.createElement("div");
-        animal.innerHTML = "<img src='assets/images/sheep.png' alt='sheep'>";
+        if (game.level == 5) {
+            animal.innerHTML = "<img src='assets/images/sheep.png' class='large-img' alt='sheep'>";  
+        } else if (game.level == 10) {
+            animal.innerHTML = "<img src='assets/images/sheep.png' class='small-img' alt='sheep'>";
+        };
         questionArea.appendChild(animal);
     }
 };
@@ -88,8 +91,8 @@ function displayOptions() {
     for (let i=0; i < game.level; i++) {
         let optionsArea = document.getElementById("options-area");
         let optionButton = document.createElement("div");
-        optionButton.classList.add("row");
-        optionButton.innerHTML = `<button id="button-${i+1}" class="btn option">${i+1}</button>`;
+        // optionButton.classList.add("row");
+        optionButton.innerHTML = `<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`;
         optionsArea.appendChild(optionButton);
     };
 };

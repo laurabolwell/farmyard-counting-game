@@ -2,22 +2,33 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    background: url('../images/farmyard-background.jpg') no-repeat center bottom;
+    background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .heading {
-    height: 10vh;
+    text-align: center;
 }
 
 .menu {
     position: fixed;
     top: 0;
     left: 0;
+    margin: 10px;
 }
 
 .game-area {
     height: 80vh;
-    padding-top:150px;
-    padding-bottom: 50px;
+    /* background: url('../images/farmyard-background.jpg') no-repeat center bottom;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    /* padding-top: 180px;
+    padding-bottom: 50px; */
 }
 
 #question-area {
@@ -25,22 +36,34 @@ body {
     flex-flow: row wrap;
     justify-content: space-around;
     align-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #options-area {
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
     align-content: space-between;
 }
 
+.option {
+    margin-top: 15px;
+}
+
 .score-area {
-    height: 10vh;
 }
 
 
-img {
-    width: 18rem;
+.large-img {
+    width: 12rem;
     height: auto;
+    margin: 10px 20px;
+}
+
+.small-img {
+    width: 8rem;
+    height: auto;
+    margin: 10px 20px;
 }
