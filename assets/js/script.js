@@ -14,6 +14,22 @@ document.addEventListener("DOMContentLoaded", function() {
     playGame();
 });
 
+function playButtonClickAudio() {
+    $('#buttonClickAudio')[0].play();
+};
+
+function playIncorrectAudio() {
+    $('#incorrectAudio')[0].play();
+};
+
+function playCorrectAudio() {
+    $('#correctAudio')[0].play();
+};
+
+function playCheerAudio() {
+    $('#cheerAudio')[0].play();
+};
+
 function setLevel() {
     difficulty = document.getElementsByClassName("difficulty");
     for (let level of difficulty) {
@@ -27,8 +43,7 @@ function setLevel() {
             };
         });
     };
-
-}
+};
 
 function playGame() {
     game.correctAnswers = 0;
@@ -44,6 +59,9 @@ function playGame() {
             checkAnswer()
         });
     };
+    $('.btn').click(function() {
+        playButtonClickAudio();
+    });
     showScore();
     newQuestion();
 };
@@ -81,10 +99,10 @@ function checkAnswer() {
     // if no increment game.incorrectAnswers
     let isCorrect = game.currentQuestion == game.playerAnswer;
     if (isCorrect) {
-        alert("Well done!");
+        playCorrectAudio();
     } else {
-        alert("Try again")
-    }
+        // playIncorrectAudio();
+    };
     updateScore(isCorrect);
     if (game.questionCount < 10) {
         newQuestion();
@@ -99,7 +117,7 @@ function updateScore(isCorrect) {
     }
     game.questionCount = game.correctAnswers + game.incorrectAnswers;
     showScore();
-}
+};
 
 function finishGame() {
     alert(`You have finished the game.
@@ -111,3 +129,4 @@ function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
     document.getElementById("incorrect").innerText = game.incorrectAnswers;
 };
+
