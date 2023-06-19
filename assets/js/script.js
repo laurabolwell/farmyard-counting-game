@@ -50,7 +50,6 @@ function playGame() {
     game.incorrectAnswers = 0;
     game.questionCount = 0;
     setLevel();
-    document.getElementById("options-area").innerHTML = "";
     displayOptions();
     let options = document.getElementsByClassName("option");
     for (let option of options) {
@@ -68,26 +67,12 @@ function playGame() {
 
 //clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
-    document.getElementById("question-area").innerHTML = "";
+    $('#question-area').empty();
     game.currentQuestion = Math.floor((Math.random() * game.level) + 1)
     displayQuestion();
 };
 
-//takes value selected in newQuestion and displays the required number of pictures
-// function displayQuestion() {
-//     let animalChoice = game.animals[Math.floor(Math.random() * 6)]
-//     for (let i = 0; i < game.currentQuestion; i++) {
-//         let questionArea = document.getElementById("question-area")
-//         let animal = document.createElement("div");
-//         if (game.level == 5) {
-//             animal.innerHTML = `<img src='assets/images/${animalChoice}.png' class='large-img' alt=${animalChoice}>`;  
-//         } else if (game.level == 10) {
-//             animal.innerHTML = `<img src='assets/images/${animalChoice}.png' class='small-img' alt=${animalChoice}>`;
-//         };
-//         questionArea.appendChild(animal);
-//     }
-// };
-
+//selects an animal at random, displays the number of animals required for the current question
 function displayQuestion() {
     let animalChoice = game.animals[Math.floor(Math.random() * 6)]
     for (let i = 0; i < game.currentQuestion; i++) {
@@ -100,10 +85,10 @@ function displayQuestion() {
 };
 
 function displayOptions() {
+    $('#options-area').empty();
     for (let i=0; i < game.level; i++) {
         let optionsArea = document.getElementById("options-area");
         let optionButton = document.createElement("div");
-        // optionButton.classList.add("row");
         optionButton.innerHTML = `<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`;
         optionsArea.appendChild(optionButton);
     };
@@ -141,8 +126,8 @@ function showScore() {
 };
 
 function finishGame() {
-    $('#cheerAudio')[0].play();
     $('#endOfGameModal').modal('show');
+    $('#cheerAudio')[0].play();
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame());
 };
