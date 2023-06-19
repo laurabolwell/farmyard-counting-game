@@ -22,13 +22,6 @@ body {
 
 .game-area {
     height: 80vh;
-    /* background: url('../images/farmyard-background.jpg') no-repeat center bottom;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
-    /* padding-top: 180px;
-    padding-bottom: 50px; */
 }
 
 #question-area {
@@ -54,7 +47,6 @@ body {
 
 .score-area {
 }
-
 
 .large-img {
     width: 200px;

@@ -8,10 +8,10 @@ let game = {
     animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken']
 };
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    $('#reset').click(playGame());
+    $('.reset').click(playGame);
     $('#startGameModal').modal('show');
+    setLevel();
 });
 
 function playButtonClickAudio() {
@@ -49,7 +49,6 @@ function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
-    setLevel();
     displayOptions();
     let options = document.getElementsByClassName("option");
     for (let option of options) {
@@ -84,6 +83,7 @@ function displayQuestion() {
     }
 };
 
+//clears the options area and then creates a button for each of the 5/10 options
 function displayOptions() {
     $('#options-area').empty();
     for (let i=0; i < game.level; i++) {
@@ -94,30 +94,21 @@ function displayOptions() {
     };
 };
 
+//listens for user answer and checks if it is correct, then increments game.correctAnswers or game.incorrectAnswers
 function checkAnswer() {
-    //listens for user answer and checks if it is correct
-    // if yes increment game.correctAnswers
-    // if no increment game.incorrectAnswers
     let isCorrect = game.currentQuestion == game.playerAnswer;
     if (isCorrect) {
         playCorrectAudio();
+        game.correctAnswers++;
     } else {
         playIncorrectAudio();
+        game.incorrectAnswers++;
     };
-    updateScore(isCorrect);
+    showScore()
+    game.questionCount = game.correctAnswers + game.incorrectAnswers;
     if (game.questionCount < 10) {
         newQuestion();
     } else {finishGame();}
-};
-
-function updateScore(isCorrect) {
-    if (isCorrect) {
-        game.correctAnswers++;
-    } else {
-        game.incorrectAnswers++;
-    }
-    game.questionCount = game.correctAnswers + game.incorrectAnswers;
-    showScore();
 };
 
 function showScore() {
