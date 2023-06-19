@@ -5,13 +5,13 @@ let game = {
     currentQuestion: 0,
     questionCount: 0,
     playerAnswer: 0,
-    choices: ["button-1", "button-2", "button-3", "button-4", "button-5"]
+    animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken']
 };
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    $('#startGameModal').modal('show');
     $('#reset').click(playGame());
+    $('#startGameModal').modal('show');
 });
 
 function playButtonClickAudio() {
@@ -74,16 +74,28 @@ function newQuestion() {
 };
 
 //takes value selected in newQuestion and displays the required number of pictures
+// function displayQuestion() {
+//     let animalChoice = game.animals[Math.floor(Math.random() * 6)]
+//     for (let i = 0; i < game.currentQuestion; i++) {
+//         let questionArea = document.getElementById("question-area")
+//         let animal = document.createElement("div");
+//         if (game.level == 5) {
+//             animal.innerHTML = `<img src='assets/images/${animalChoice}.png' class='large-img' alt=${animalChoice}>`;  
+//         } else if (game.level == 10) {
+//             animal.innerHTML = `<img src='assets/images/${animalChoice}.png' class='small-img' alt=${animalChoice}>`;
+//         };
+//         questionArea.appendChild(animal);
+//     }
+// };
+
 function displayQuestion() {
+    let animalChoice = game.animals[Math.floor(Math.random() * 6)]
     for (let i = 0; i < game.currentQuestion; i++) {
-        let questionArea = document.getElementById("question-area")
-        let animal = document.createElement("div");
         if (game.level == 5) {
-            animal.innerHTML = "<img src='assets/images/sheep.png' class='large-img' alt='sheep'>";  
+            $('#question-area').append(`<div><img src="assets/images/${animalChoice}.png" class="large-img" alt=${animalChoice}></div>`);  
         } else if (game.level == 10) {
-            animal.innerHTML = "<img src='assets/images/sheep.png' class='small-img' alt='sheep'>";
+            $('#question-area').append(`<div><img src="assets/images/${animalChoice}.png" class="small-img" alt=${animalChoice}></div>`);
         };
-        questionArea.appendChild(animal);
     }
 };
 

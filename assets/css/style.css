@@ -57,13 +57,13 @@ body {
 
 
 .large-img {
-    width: 12rem;
+    width: 200px;
     height: auto;
     margin: 10px 20px;
 }
 
 .small-img {
-    width: 8rem;
+    width: 100px;
     height: auto;
     margin: 10px 20px;
 }
