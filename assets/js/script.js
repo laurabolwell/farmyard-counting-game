@@ -116,7 +116,18 @@ function showScore() {
     document.getElementById("incorrect").innerText = game.incorrectAnswers;
 };
 
+function fillStars() {
+numberOfStars = Math.floor(game.correctAnswers / 2);
+    for (let i=0; i < numberOfStars; i++) {
+        $(`#star${i+1}`).removeClass("fa-regular").addClass("fa-solid");
+    };
+    if (game.correctAnswers % 2 != 0) {
+        $(`#star${numberOfStars+1}`).removeClass("fa-regular fa-star").addClass("fa-solid fa-star-half-stroke");
+    }
+};
+
 function finishGame() {
+    fillStars();
     $('#endOfGameModal').modal('show');
     $('#cheerAudio')[0].play();
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
