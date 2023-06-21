@@ -17,26 +17,34 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     $('#startGameModal').modal('show');
     setLevel();
-});
+})
 
 function playButtonClickAudio() {
-    $('#buttonClickAudio')[0].play();
-};
+    if (!game.muted) {
+        $('#buttonClickAudio')[0].play();
+    }
+}
 
 function playIncorrectAudio() {
-    $('#incorrectAudio')[0].play();
-};
+    if (!game.muted) {
+        $('#incorrectAudio')[0].play();
+    }
+}
 
 function playCorrectAudio() {
-    $('#correctAudio')[0].play();
-};
+    if (!game.muted) {
+        $('#correctAudio')[0].play();
+    }
+}
 
 function playCheerAudio() {
-    $('#cheerAudio')[0].play();
-};
+    if (!game.muted) {
+        $('#cheerAudio')[0].play();
+    }
+}
 
 function setLevel() {
-    difficulty = document.getElementsByClassName("difficulty");
+    let difficulty = document.getElementsByClassName("difficulty");
     for (let level of difficulty) {
         level.addEventListener("click", function(){
             if (this.getAttribute("id") === "easy-level") {
@@ -122,7 +130,7 @@ function showScore() {
 };
 
 function fillStars() {
-numberOfStars = Math.floor(game.correctAnswers / 2);
+let numberOfStars = Math.floor(game.correctAnswers / 2);
     for (let i=0; i < numberOfStars; i++) {
         $(`#star${i+1}`).removeClass("fa-regular").addClass("fa-solid");
     };
@@ -134,7 +142,7 @@ numberOfStars = Math.floor(game.correctAnswers / 2);
 function finishGame() {
     fillStars();
     $('#endOfGameModal').modal('show');
-    $('#cheerAudio')[0].play();
+    playCheerAudio();
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame());
 };
