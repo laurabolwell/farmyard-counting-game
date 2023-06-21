@@ -20,6 +20,17 @@ body {
     margin: 10px;
 }
 
+.sound {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
 .game-area {
     height: 80vh;
 }
