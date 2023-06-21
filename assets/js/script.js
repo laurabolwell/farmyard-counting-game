@@ -5,7 +5,8 @@ let game = {
     currentQuestion: 0,
     questionCount: 0,
     playerAnswer: 0,
-    animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken']
+    animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken'],
+    muted: false
 };
 
 document.addEventListener("DOMContentLoaded", function() {
