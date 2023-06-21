@@ -11,6 +11,10 @@ let game = {
 
 document.addEventListener("DOMContentLoaded", function() {
     $('.reset').click(playGame);
+    $('.sound').click(function() {
+        print("sound button clicked");
+        $(".sound-icon").toggleClass("hidden");
+    })
     $('#startGameModal').modal('show');
     setLevel();
 });
