@@ -64,6 +64,7 @@ function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
+    resetStars();
     displayOptions();
     let options = document.getElementsByClassName("option");
     for (let option of options) {
@@ -138,11 +139,16 @@ let numberOfStars = Math.floor(game.correctAnswers / 2);
     }
 };
 
+function resetStars() {
+    $('.score-star').removeClass('fa-solid fa-star-half-stroke');
+    $('.score-star').addClass('fa-regular fa-star');
+}
+
 function finishGame() {
     fillStars();
     $('#endOfGameModal').modal('show');
     playCheerAudio();
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
-    $('#play-again').click(playGame());
+    $('#play-again').click(playGame);
 };
 
