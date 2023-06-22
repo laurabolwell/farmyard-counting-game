@@ -8,6 +8,7 @@ let game = {
     questionCount: 0,
     playerAnswer: 0,
     animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken'],
+    currentAnimal: 0,
     muted: true
 };
 
@@ -91,14 +92,22 @@ function newQuestion() {
     displayQuestion();
 };
 
+function selectAnimal() {
+    let nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)]
+    while (nextAnimal == game.currentAnimal) {
+        nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)]
+    }
+    game.currentAnimal = nextAnimal;
+}
+
 //selects an animal at random, displays the number of animals required for the current question
 function displayQuestion() {
-    let animalChoice = game.animals[Math.floor(Math.random() * game.animals.length)]
+    selectAnimal();
     for (let i = 0; i < game.currentQuestion; i++) {
         if (game.level == 5) {
-            $('#question-area').append(`<img src="assets/images/${animalChoice}.png" class="img-large" alt=${animalChoice}>`);  
+            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="img-large" alt=${game.currentAnimal}>`);  
         } else if (game.level == 10) {
-            $('#question-area').append(`<img src="assets/images/${animalChoice}.png" class="img-small" alt=${animalChoice}>`);
+            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="img-small" alt=${game.currentAnimal}>`);
         };
     }
 };
