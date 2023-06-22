@@ -36,12 +36,12 @@ body {
 }
 
 #question-area {
+    height: 80vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-content: space-around;
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 #options-area {
@@ -52,21 +52,15 @@ body {
     align-content: space-between;
 }
 
-.option {
-    margin-top: 15px;
-}
-
 .score-area {
 }
 
-.large-img {
-    width: 200px;
-    height: auto;
-    margin: 10px 20px;
+.img-small {
+    max-width: 25%;
+    max-height: 33%;
 }
 
-.small-img {
-    width: 150px;
-    height: auto;
-    margin: 10px 20px;
+.img-large {
+    max-width: 33%;
+    max-height: 50%;
 }
