@@ -1,3 +1,5 @@
+/* jshint esversion: 11, jquery: true */
+
 let game = {
     level: 5,
     correctAnswers: 0,
@@ -6,14 +8,14 @@ let game = {
     questionCount: 0,
     playerAnswer: 0,
     animals: ['pig', 'sheep', 'horse', 'goat', 'cow', 'chicken'],
-    muted: false
+    muted: true
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     $('.reset').click(playGame);
     $('.sound').click(function() {
-        print("sound button clicked");
         $(".sound-icon").toggleClass("hidden");
+        game.muted = !game.muted
     })
     $('#startGameModal').modal('show');
     setLevel();
@@ -69,13 +71,13 @@ function playGame() {
             game.playerAnswer = this.innerText;
             checkAnswer()
         });
-    };
+    }
     $('.btn').click(function() {
         playButtonClickAudio();
     });
     showScore();
     newQuestion();
-};
+}
 
 //clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
@@ -86,26 +88,23 @@ function newQuestion() {
 
 //selects an animal at random, displays the number of animals required for the current question
 function displayQuestion() {
-    let animalChoice = game.animals[Math.floor(Math.random() * 6)]
+    let animalChoice = game.animals[Math.floor(Math.random() * game.animals.length)]
     for (let i = 0; i < game.currentQuestion; i++) {
         if (game.level == 5) {
-            $('#question-area').append(`<div><img src="assets/images/${animalChoice}.png" class="large-img" alt=${animalChoice}></div>`);  
+            $('#question-area').append(`<img src="assets/images/${animalChoice}.png" class="img-large" alt=${animalChoice}>`);  
         } else if (game.level == 10) {
-            $('#question-area').append(`<div><img src="assets/images/${animalChoice}.png" class="small-img" alt=${animalChoice}></div>`);
+            $('#question-area').append(`<img src="assets/images/${animalChoice}.png" class="img-small" alt=${animalChoice}>`);
         };
     }
 };
 
-//clears the options area and then creates a button for each of the 5/10 options
+//clears the options area and then creates a button for each of the 5 or 10 options
 function displayOptions() {
     $('#options-area').empty();
     for (let i=0; i < game.level; i++) {
-        let optionsArea = document.getElementById("options-area");
-        let optionButton = document.createElement("div");
-        optionButton.innerHTML = `<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`;
-        optionsArea.appendChild(optionButton);
-    };
-};
+        $('#options-area').append(`<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`)
+    }
+}
 
 //listens for user answer and checks if it is correct, then increments game.correctAnswers or game.incorrectAnswers
 function checkAnswer() {
