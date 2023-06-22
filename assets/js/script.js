@@ -83,7 +83,11 @@ function playGame() {
 //clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
     $('#question-area').empty();
-    game.currentQuestion = Math.floor((Math.random() * game.level) + 1)
+    let nextQuestion = Math.floor((Math.random() * game.level) + 1);
+    while (nextQuestion == game.currentQuestion) {
+        nextQuestion = Math.floor((Math.random() * game.level) + 1);
+    }
+    game.currentQuestion = nextQuestion;
     displayQuestion();
 };
 
