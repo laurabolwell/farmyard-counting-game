@@ -28,8 +28,6 @@
 
 <body>
     <header>
-        <h1 class="heading">Farmyard <br class="small-screen-br">Counting</h1>
-
         <button type="button" class="btn btn-lg btn-danger menu" data-bs-toggle="modal"
             data-bs-target="#startGameModal">
             Menu
@@ -50,13 +48,13 @@
         </div>
     </section>
 
-    <div class="score-area fixed-bottom">
+    <footer class="score-area fixed-bottom">
         <div class="scores"><i class="fa-regular fa-thumbs-up"></i><span id="correct">0</span></div>
         <div class="scores"><i class="fa-regular fa-thumbs-down"></i><span id="incorrect">0</span></div>
         <button class="btn btn-danger btn-lg reset">Reset</button>
-    </div>
+    </footer>
 
-    <div class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <aside class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="startGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -75,9 +73,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </aside>
 
-    <div class="modal fade" id="endOfGameModal" tabindex="-1" aria-labelledby="endOfGameModal" aria-hidden="true">
+    <aside class="modal fade" id="endOfGameModal" data-bs-backdrop="static" tabindex="-1"
+        aria-labelledby="endOfGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -100,7 +99,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </aside>
 
     <audio id="buttonClickAudio" src="assets/audio/button-click.mp3"></audio>
     <audio id="correctAudio" src="assets/audio/correct.mp3"></audio>
