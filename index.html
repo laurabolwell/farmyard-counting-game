@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d2b22e28d8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
@@ -24,33 +27,37 @@
 </head>
 
 <body>
-    <h1 class="heading">Farmyard Counting</h1>
+    <header>
+        <h1 class="heading">Farmyard <br class="small-screen-br">Counting</h1>
 
-    <button type="button" class="btn btn-lg btn-warning menu" data-bs-toggle="modal" data-bs-target="#startGameModal">
-        Menu
-    </button>
+        <button type="button" class="btn btn-lg btn-danger menu" data-bs-toggle="modal"
+            data-bs-target="#startGameModal">
+            Menu
+        </button>
 
-    <button type="button" class="btn btn-lg btn-warning sound">
-        <i class="fa-solid fa-volume-xmark sound-icon"></i>
-        <i class="fa-solid fa-volume-high sound-icon hidden"></i>
-    </button>
+        <button type="button" class="btn btn-lg btn-danger sound">
+            <i class="fa-solid fa-volume-xmark sound-icon"></i>
+            <i class="fa-solid fa-volume-high sound-icon hidden"></i>
+        </button>
+    </header>
 
-    <div class="container-fluid game-area">
+    <section class="container-fluid game-area">
         <div class="row">
             <div class="col-10" id="question-area">
             </div>
             <div class="col-2" id="options-area">
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="score-area fixed-bottom">
-        <p class="scores">Correct Answers <span id="correct">0</span></p>
-        <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-        <button class="btn btn-warning btn-lg reset">Reset</button>
+        <div class="scores"><i class="fa-regular fa-thumbs-up"></i><span id="correct">0</span></div>
+        <div class="scores"><i class="fa-regular fa-thumbs-down"></i><span id="incorrect">0</span></div>
+        <button class="btn btn-danger btn-lg reset">Reset</button>
     </div>
 
-    <div class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="startGameModal" aria-hidden="true">
+    <div class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="startGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">

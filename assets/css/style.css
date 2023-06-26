@@ -7,10 +7,12 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    font-family: 'Short Stack', cursive;
 }
 
 .heading {
     text-align: center;
+    padding-top: 15px;
 }
 
 .menu {
@@ -49,7 +51,7 @@ body {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    align-content: space-between;
+    align-content: center;
 }
 
 .reset {
@@ -62,24 +64,39 @@ body {
 .score-area {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    font-size: 2rem;
 }
 
-.score-area p {
-    font-size: 1.5rem;
-    padding: 15px;
+.score-area i {
+    padding: 10px;
     margin: 0;
-    
 }
 
 .img-fluid {
     max-width: 33%;
-    max-height: 33%;
+    max-height: 30%;
 }
 
 @media screen and (max-width: 480px) {
     .img-fluid {
         max-width: 50%;
         max-height: 20%;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .small-screen-br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .score-area {
+        justify-content: center;
+    }
+    .score-area i {
+        padding: 5px;
+        padding-left: 20px;
     }
 }
