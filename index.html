@@ -26,11 +26,11 @@
 <body>
     <h1 class="heading">Farmyard Counting</h1>
 
-    <button type="button" class="btn btn-warning menu" data-bs-toggle="modal" data-bs-target="#startGameModal">
+    <button type="button" class="btn btn-lg btn-warning menu" data-bs-toggle="modal" data-bs-target="#startGameModal">
         Menu
     </button>
 
-    <button type="button" class="btn btn-warning sound">
+    <button type="button" class="btn btn-lg btn-warning sound">
         <i class="fa-solid fa-volume-xmark sound-icon"></i>
         <i class="fa-solid fa-volume-high sound-icon hidden"></i>
     </button>
@@ -42,16 +42,12 @@
             <div class="col-2" id="options-area">
             </div>
         </div>
+    </div>
 
-        <div class="row score-area fixed-bottom">
-            <div class="col">
-                <p class="scores">Correct Answers <span id="correct">0</span></p>
-            </div>
-            <div class="col">
-                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-            </div>
-            <div class="col"><button class="btn btn-warning reset">Reset</button></div>
-        </div>
+    <div class="score-area fixed-bottom">
+        <p class="scores">Correct Answers <span id="correct">0</span></p>
+        <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+        <button class="btn btn-warning btn-lg reset">Reset</button>
     </div>
 
     <div class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="startGameModal" aria-hidden="true">
