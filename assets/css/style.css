@@ -2,7 +2,7 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background: url('../images/farmyard-background.jpg') no-repeat center bottom;
+    background: url('../images/farmyard-background.jpg') no-repeat center top;
     background-size: contain;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,9 +10,8 @@ body {
     font-family: 'Short Stack', cursive;
 }
 
-.heading {
-    text-align: center;
-    padding-top: 15px;
+header {
+    height: 10vh;
 }
 
 .menu {
