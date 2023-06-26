@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.reset').click(playGame);
     $('.sound').click(function() {
         $(".sound-icon").toggleClass("hidden");
-        game.muted = !game.muted
-    })
+        game.muted = !game.muted;
+    });
     $('#startGameModal').modal('show');
-    setLevel();
-})
+    getLevel();
+});
 
 function playButtonClickAudio() {
     if (!game.muted) {
@@ -52,20 +52,24 @@ function playAnimalSound() {
     }
 }
 
-function setLevel() {
+function getLevel() {
     let difficulty = document.getElementsByClassName("difficulty");
     for (let level of difficulty) {
-        level.addEventListener("click", function(){
-            if (this.getAttribute("id") === "easy-level") {
-                game.level = 5;
-                playGame();
-            } else if (this.getAttribute("id") === "hard-level") {
-                game.level = 10;
-                playGame();
-            };
-        });
-    };
-};
+        level.addEventListener("click", setLevel);
+    }
+}
+
+function setLevel() {
+  if (this.getAttribute("id") === "easy-level") {
+    game.level = 5;
+    playGame();
+  } else if (this.getAttribute("id") === "hard-level") {
+    game.level = 10;
+    playGame();
+  }
+}
+
+
 
 function playGame() {
     game.correctAnswers = 0;
@@ -75,16 +79,19 @@ function playGame() {
     displayOptions();
     let options = document.getElementsByClassName("option");
     for (let option of options) {
-        option.addEventListener("click", function() {
-            game.playerAnswer = this.innerText;
-            checkAnswer()
-        });
-    }
+        option.addEventListener("click", clickOption);
+            checkAnswer();
+        }
     $('.btn').click(function() {
         playButtonClickAudio();
     });
     showScore();
     newQuestion();
+}
+
+function clickOption() {
+    game.playerAnswer = this.innerText;
+    checkAnswer();
 }
 
 //clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
@@ -96,12 +103,12 @@ function newQuestion() {
     }
     game.currentQuestion = nextQuestion;
     displayQuestion();
-};
+}
 
 function selectAnimal() {
-    let nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)]
+    let nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)];
     while (nextAnimal == game.currentAnimal) {
-        nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)]
+        nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)];
     }
     game.currentAnimal = nextAnimal;
 }
@@ -114,16 +121,16 @@ function displayQuestion() {
             $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);  
         } else if (game.level == 10) {
             $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);
-        };
+        }
     }
     $('.animal').click(playAnimalSound);
-};
+}
 
 //clears the options area and then creates a button for each of the 5 or 10 options
 function displayOptions() {
     $('#options-area').empty();
     for (let i=0; i < game.level; i++) {
-        $('#options-area').append(`<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`)
+        $('#options-area').append(`<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`);
     }
 }
 
@@ -136,28 +143,28 @@ function checkAnswer() {
     } else {
         playIncorrectAudio();
         game.incorrectAnswers++;
-    };
-    showScore()
+    }
+    showScore();
     game.questionCount = game.correctAnswers + game.incorrectAnswers;
     if (game.questionCount < 10) {
         newQuestion();
     } else {finishGame();}
-};
+}
 
 function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
     document.getElementById("incorrect").innerText = game.incorrectAnswers;
-};
+}
 
 function fillStars() {
 let numberOfStars = Math.floor(game.correctAnswers / 2);
     for (let i=0; i < numberOfStars; i++) {
         $(`#star${i+1}`).removeClass("fa-regular").addClass("fa-solid");
-    };
+    }
     if (game.correctAnswers % 2 != 0) {
         $(`#star${numberOfStars+1}`).removeClass("fa-regular fa-star").addClass("fa-solid fa-star-half-stroke");
     }
-};
+}
 
 function resetStars() {
     $('.score-star').removeClass('fa-solid fa-star-half-stroke');
@@ -170,5 +177,5 @@ function finishGame() {
     playCheerAudio();
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame);
-};
+}
 
