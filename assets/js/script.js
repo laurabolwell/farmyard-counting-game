@@ -46,6 +46,12 @@ function playCheerAudio() {
     }
 }
 
+function playAnimalSound() {
+    if (!game.muted) {
+        $(`#${game.currentAnimal}Audio`)[0].play();
+    }
+}
+
 function setLevel() {
     let difficulty = document.getElementsByClassName("difficulty");
     for (let level of difficulty) {
@@ -105,11 +111,12 @@ function displayQuestion() {
     selectAnimal();
     for (let i = 0; i < game.currentQuestion; i++) {
         if (game.level == 5) {
-            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="img-large" alt=${game.currentAnimal}>`);  
+            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-large" alt=${game.currentAnimal}>`);  
         } else if (game.level == 10) {
-            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="img-small" alt=${game.currentAnimal}>`);
+            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-small" alt=${game.currentAnimal}>`);
         };
     }
+    $('.animal').click(playAnimalSound);
 };
 
 //clears the options area and then creates a button for each of the 5 or 10 options

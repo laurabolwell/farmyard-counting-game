@@ -395,8 +395,12 @@ by sending yourself the following command: `!freemedia`.
 | [Zapsplat](https://www.zapsplat.com/music/bright-button-click-1/) | homepage | audio | button click |
 | [Zapsplat](hhttps://www.zapsplat.com/music/correct-answer-ping-chime-1/) | homepage | audio | correct answer |
 | [Zapsplat](https://www.zapsplat.com/music/game-sound-basic-digital-retro-incorrect-wrong-error-negative-tone-1/) | homepage | audio | incorrect answer |
-
-
+| [Zapsplat](https://www.zapsplat.com/music/sheep-baa/) | homepage | audio | sheep sound |
+| [Zapsplat](https://www.zapsplat.com/music/cow-moo-mooing-close-up-1/) | homepage | audio | cow sound |
+| [Zapsplat](https://www.zapsplat.com/music/horse-whinny-2/) | homepage | audio | horse sound |
+| [Zapsplat](https://www.zapsplat.com/music/cockerel-single-cluck-1/) | homepage | audio | chicken sound |
+| [Zapsplat](https://www.zapsplat.com/music/pig-grunting-designed-5/) | homepage | audio | pig sound |
+| [Zapsplat](https://www.zapsplat.com/music/goat-sheep-bleat-external/) | homepage | audio | goat sound |
 
 ### Acknowledgements
 
