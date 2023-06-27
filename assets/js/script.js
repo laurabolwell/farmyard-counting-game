@@ -98,10 +98,10 @@ function playGame() {
     game.questionCount = 0;
     resetStars();
     displayOptions();
-    let options = document.getElementsByClassName("option");
-    for (let option of options) {
-        option.addEventListener("click", clickOption);
-        }
+    $('.option').on('click', function() {
+        game.playerAnswer = this.innerText;
+        checkAnswer();
+    });
     showScore();
     newQuestion();
 }
@@ -198,6 +198,7 @@ function resetStars() {
 
 // Calls the fillStars function, then displays the endofGame modal
 function finishGame() {
+    $('.option').off("click");
     fillStars();
     setTimeout(function() {
         $('#endOfGameModal').modal('show');
