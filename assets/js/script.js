@@ -97,6 +97,7 @@ function playGame() {
     game.incorrectAnswers = 0;
     game.questionCount = 0;
     resetStars();
+    resetTrophy();
     displayOptions();
     $('.option').on('click', function() {
         game.playerAnswer = this.innerText;
@@ -106,11 +107,6 @@ function playGame() {
     newQuestion();
 }
 
-// Checks the answer the player has clicked
-function clickOption() {
-    game.playerAnswer = this.innerText;
-    checkAnswer();
-}
 
 //Clears question-area, selects random number from 1-5/1-10 (reselects if it is the same as the last question),
 // assigns it to game.currentQuestion, then calls the displayQuestion function
@@ -190,20 +186,40 @@ let numberOfStars = Math.floor(game.correctAnswers / 2);
     }
 }
 
+function displayTrophy() {
+    let trophyColor = "";
+    if (game.correctAnswers <= 4) {
+        trophyColor = 'bronze';
+    }
+    else if (game.correctAnswers <= 7) {
+        trophyColor = 'silver';
+    }
+    else {
+        trophyColor = 'gold';
+    }
+    $('#trophy').append(`<img src="assets/images/${trophyColor}-trophy.png" alt=${trophyColor}-trophy>`);
+}
+
 // Resets the stars to all empty
 function resetStars() {
     $('.score-star').removeClass('fa-solid fa-star-half-stroke');
     $('.score-star').addClass('fa-regular fa-star');
 }
 
+// Removes the trophy from the modal
+function resetTrophy() {
+    $('#trophy').empty();
+}
+
 // Calls the fillStars function, then displays the endofGame modal
 function finishGame() {
     $('.option').off("click");
+    displayTrophy();
     fillStars();
     setTimeout(function() {
         $('#endOfGameModal').modal('show');
         playCheerAudio();
     }, 1000);
-    $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
+    // $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame);
 }

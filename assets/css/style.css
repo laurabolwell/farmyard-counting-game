@@ -94,11 +94,25 @@ header {
 }
 
 .modal-image {
-    height: 40vh;
+    height: 30vh;
+    background: 
 }
 
 #stars {
     font-size: x-large;
+    padding-top: 16px;
+}
+
+#trophy img {
+    height: 40vh;
+}
+
+#trophy {
+    height: 50vh;
+    width: 50vh;
+    background: #67C93E;
+    border-radius: 50%;
+    padding-top: 6vh;
 }
 
 .modal-body p {
