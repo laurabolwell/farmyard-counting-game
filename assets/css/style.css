@@ -10,33 +10,6 @@ body {
     font-family: 'Short Stack', cursive;
 }
 
-.modal-background {
-    background-color: #ffd65c;
-}
-
-.modal-header {
-    justify-content: center;
-    border: none;
-}
-
-.modal-image {
-    height: 40vh;
-}
-
-#stars {
-    font-size: x-large;
-}
-
-.modal-body p {
-    font-size: larger;
-}
-
-.modal-footer {
-    display:flex;
-    justify-content: space-around;
-    border: none;
-}
-
 header {
     height: 10vh;
 }
@@ -72,6 +45,11 @@ header {
     padding-top: 50px;
 }
 
+.img-fluid {
+    max-width: 33%;
+    max-height: 30%;
+}
+
 #options-area {
     height: 80vh;
     display: flex;
@@ -99,10 +77,36 @@ header {
     margin: 0;
 }
 
-.img-fluid {
-    max-width: 33%;
-    max-height: 30%;
+/* Modals */
+
+.modal-background {
+    background-color: #ffd65c;
 }
+
+.modal-header {
+    justify-content: center;
+    border: none;
+}
+
+.modal-image {
+    height: 40vh;
+}
+
+#stars {
+    font-size: x-large;
+}
+
+.modal-body p {
+    font-size: larger;
+}
+
+.modal-footer {
+    display:flex;
+    justify-content: space-around;
+    border: none;
+}
+
+/* Media Queries */
 
 @media screen and (max-width: 480px) {
     .img-fluid {
