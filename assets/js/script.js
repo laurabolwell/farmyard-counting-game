@@ -69,8 +69,6 @@ function setLevel() {
   }
 }
 
-
-
 function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
@@ -80,7 +78,6 @@ function playGame() {
     let options = document.getElementsByClassName("option");
     for (let option of options) {
         option.addEventListener("click", clickOption);
-            checkAnswer();
         }
     $('.btn').click(function() {
         playButtonClickAudio();
@@ -148,7 +145,9 @@ function checkAnswer() {
     game.questionCount = game.correctAnswers + game.incorrectAnswers;
     if (game.questionCount < 10) {
         newQuestion();
-    } else {finishGame();}
+    } else {
+        finishGame();
+    }
 }
 
 function showScore() {
