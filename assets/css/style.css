@@ -68,13 +68,18 @@ header {
 .score-area {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     font-size: 2rem;
 }
 
 .score-area i {
-    padding: 10px;
+    size: 30px;
+    padding-right: 10px;
     margin: 0;
+}
+
+.scores {
+    margin: 10px;
 }
 
 /* Modals */
@@ -122,11 +127,18 @@ header {
 }
 
 @media screen and (max-width: 450px) {
-    .score-area {
-        justify-content: center;
+    .scores {
+        padding: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
+}
+
+@media screen and (max-width: 360px) {
     .score-area i {
-        padding: 5px;
-        padding-left: 20px;
+        padding-right: 0px;
+    }
+    .scores {
+        padding: 8px 2px;
     }
 }
