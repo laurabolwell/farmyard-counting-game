@@ -172,9 +172,10 @@ function resetStars() {
 
 function finishGame() {
     fillStars();
-    $('#endOfGameModal').modal('show');
-    playCheerAudio();
+    setTimeout(function() {
+        $('#endOfGameModal').modal('show');
+        playCheerAudio();
+    }, 1000);
     $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame);
 }
-
