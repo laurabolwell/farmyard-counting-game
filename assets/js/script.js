@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $(".sound-icon").toggleClass("hidden");
         game.muted = !game.muted;
     });
-    $('.btn').click(playButtonClickAudio);
+    $('.menu, .sound, .reset, .difficulty').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
 });
