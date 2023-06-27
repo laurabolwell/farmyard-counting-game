@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts, fontawesome, bootstrap, jQuery and CSS links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
@@ -23,10 +24,12 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+
+    <title>Farmyard Counting</title>
 </head>
 
 <body>
+    <!-- Controls buttons area -->
     <header>
         <button type="button" class="btn btn-lg btn-danger menu" data-bs-toggle="modal"
             data-bs-target="#startGameModal">
@@ -39,6 +42,7 @@
         </button>
     </header>
 
+    <!-- Game area -->
     <section class="container-fluid game-area">
         <div class="row">
             <div class="col-10" id="question-area">
@@ -48,12 +52,14 @@
         </div>
     </section>
 
+    <!-- Score area and reset button -->
     <footer class="score-area fixed-bottom">
         <div class="scores"><i class="fa-regular fa-thumbs-up"></i><span id="correct">0</span></div>
         <div class="scores"><i class="fa-regular fa-thumbs-down"></i><span id="incorrect">0</span></div>
         <button class="btn btn-danger btn-lg reset">Reset</button>
     </footer>
 
+    <!-- Start of game modal -->
     <aside class="modal fade" id="startGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="startGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -75,6 +81,7 @@
         </div>
     </aside>
 
+    <!-- End of game modal -->
     <aside class="modal fade" id="endOfGameModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="endOfGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -100,6 +107,7 @@
         </div>
     </aside>
 
+    <!-- Audio Files -->
     <audio id="buttonClickAudio" src="assets/audio/button-click.mp3"></audio>
     <audio id="correctAudio" src="assets/audio/correct.mp3"></audio>
     <audio id="incorrectAudio" src="assets/audio/incorrect.mp3"></audio>

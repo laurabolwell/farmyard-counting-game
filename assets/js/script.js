@@ -12,12 +12,14 @@ let game = {
     muted: true
 };
 
+// Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
 document.addEventListener("DOMContentLoaded", function() {
     $('.reset').click(playGame);
     $('.sound').click(function() {
         $(".sound-icon").toggleClass("hidden");
         game.muted = !game.muted;
     });
+    $('.btn').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
 });
@@ -52,6 +54,7 @@ function playAnimalSound() {
     }
 }
 
+// Adds event listener to the level buttons on the startGame modal and calls the setLevel function when they are clicked
 function getLevel() {
     let difficulty = document.getElementsByClassName("difficulty");
     for (let level of difficulty) {
@@ -59,6 +62,7 @@ function getLevel() {
     }
 }
 
+// Updates the level in the game object and then starts a new game
 function setLevel() {
   if (this.getAttribute("id") === "easy-level") {
     game.level = 5;
@@ -69,6 +73,8 @@ function setLevel() {
   }
 }
 
+// Resets the question and answer counts in the game object, displays the options buttons and adds event listeners to them, 
+// shows the starting score of 0 and then calls the newQuestion function
 function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
@@ -79,19 +85,18 @@ function playGame() {
     for (let option of options) {
         option.addEventListener("click", clickOption);
         }
-    $('.btn').click(function() {
-        playButtonClickAudio();
-    });
     showScore();
     newQuestion();
 }
 
+// Checks the answer the player has clicked
 function clickOption() {
     game.playerAnswer = this.innerText;
     checkAnswer();
 }
 
-//clear question-area, selects random number from 1-5/1-10 and assigns it to game.currentQuestion, then calls the displayQuestion function
+//Clears question-area, selects random number from 1-5/1-10 (reselects if it is the same as the last question),
+// assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
     $('#question-area').empty();
     let nextQuestion = Math.floor((Math.random() * game.level) + 1);
@@ -102,6 +107,7 @@ function newQuestion() {
     displayQuestion();
 }
 
+// Selects an animal at random and reselects if it is the same as the last question
 function selectAnimal() {
     let nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)];
     while (nextAnimal == game.currentAnimal) {
@@ -110,7 +116,7 @@ function selectAnimal() {
     game.currentAnimal = nextAnimal;
 }
 
-//selects an animal at random, displays the number of animals required for the current question
+// Displays the number of animals required for the current question
 function displayQuestion() {
     selectAnimal();
     for (let i = 0; i < game.currentQuestion; i++) {
@@ -123,7 +129,7 @@ function displayQuestion() {
     $('.animal').click(playAnimalSound);
 }
 
-//clears the options area and then creates a button for each of the 5 or 10 options
+// Clears the options area and then creates a button for each of the 5 or 10 options
 function displayOptions() {
     $('#options-area').empty();
     for (let i=0; i < game.level; i++) {
@@ -131,7 +137,7 @@ function displayOptions() {
     }
 }
 
-//listens for user answer and checks if it is correct, then increments game.correctAnswers or game.incorrectAnswers
+// Listens for user answer and checks if it is correct, then increments game.correctAnswers or game.incorrectAnswers
 function checkAnswer() {
     let isCorrect = game.currentQuestion == game.playerAnswer;
     if (isCorrect) {
@@ -150,11 +156,13 @@ function checkAnswer() {
     }
 }
 
+// Updates the screen with the scores stored in the game object
 function showScore() {
     document.getElementById("correct").innerText = game.correctAnswers;
     document.getElementById("incorrect").innerText = game.incorrectAnswers;
 }
 
+// Fills the required number of stars based on player score out of 10
 function fillStars() {
 let numberOfStars = Math.floor(game.correctAnswers / 2);
     for (let i=0; i < numberOfStars; i++) {
@@ -165,11 +173,13 @@ let numberOfStars = Math.floor(game.correctAnswers / 2);
     }
 }
 
+// Resets the stars to all empty
 function resetStars() {
     $('.score-star').removeClass('fa-solid fa-star-half-stroke');
     $('.score-star').addClass('fa-regular fa-star');
 }
 
+// Calls the fillStars function, then displays the endofGame modal
 function finishGame() {
     fillStars();
     setTimeout(function() {
