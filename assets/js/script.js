@@ -24,33 +24,50 @@ document.addEventListener("DOMContentLoaded", function() {
     getLevel();
 });
 
+// If sound is NOT muted: stops the current audio and plays the button click audio
 function playButtonClickAudio() {
     if (!game.muted) {
+        $('.currentAudio')[0].load()
+        $('audio').removeClass('currentAudio');
         $('#buttonClickAudio')[0].play();
+        $('#buttonClickAudio').addClass('currentAudio')  
     }
 }
 
+// If sound is NOT muted: stops the current audio and plays the incorrect answer audio
 function playIncorrectAudio() {
     if (!game.muted) {
+        $('.currentAudio')[0].load()
+        $('audio').removeClass('currentAudio');
         $('#incorrectAudio')[0].play();
+        $('#incorrectAudio').addClass('currentAudio') 
     }
 }
 
+// If sound is NOT muted: stops the current audio and plays the correct answer audio
 function playCorrectAudio() {
     if (!game.muted) {
+        $('.currentAudio')[0].load()
+        $('audio').removeClass('currentAudio');
         $('#correctAudio')[0].play();
+        $('#correctAudio').addClass('currentAudio');
     }
 }
 
+// If sound is NOT muted: plays the children cheering audio
 function playCheerAudio() {
     if (!game.muted) {
         $('#cheerAudio')[0].play();
     }
 }
 
+// If sound is NOT muted: stops the current audio and plays the audio of the animal in the current question
 function playAnimalSound() {
     if (!game.muted) {
+        $('.currentAudio')[0].load()
+        $('audio').removeClass('currentAudio');
         $(`#${game.currentAnimal}Audio`)[0].play();
+        $(`#${game.currentAnimal}Audio`).addClass('currentAudio');
     }
 }
 
