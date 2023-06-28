@@ -91,6 +91,7 @@ header {
 .modal-header {
     justify-content: center;
     border: none;
+    padding-bottom: 8px;
 }
 
 .modal-image {
@@ -115,14 +116,20 @@ header {
     padding-top: 6vh;
 }
 
+.modal-body {
+    padding: 8px;
+}
+
 .modal-body p {
     font-size: larger;
+    padding-top: 8px;
 }
 
 .modal-footer {
     display:flex;
     justify-content: space-around;
     border: none;
+    padding-top: 8px;
 }
 
 /* Media Queries */
