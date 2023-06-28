@@ -12,6 +12,13 @@ let game = {
     muted: true
 };
 
+localStorage.setItem("easyHighScore", 0);
+localStorage.setItem("hardHighScore", 0);
+localStorage.setItem("easyAverage", 0);
+localStorage.setItem("hardAverage", 0);
+localStorage.setItem("easyGames", 0);
+localStorage.setItem("hardGames", 0);
+
 // Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
 document.addEventListener("DOMContentLoaded", function() {
     $('.reset').click(playGame);
@@ -107,7 +114,6 @@ function playGame() {
     newQuestion();
 }
 
-
 //Clears question-area, selects random number from 1-5/1-10 (reselects if it is the same as the last question),
 // assigns it to game.currentQuestion, then calls the displayQuestion function
 function newQuestion() {
@@ -200,6 +206,29 @@ function displayTrophy() {
     $('#trophy').append(`<img src="assets/images/${trophyColor}-trophy.png" alt=${trophyColor}-trophy>`);
 }
 
+function updateStoredScores() {
+    if (game.level == 5) {
+        if (game.correctAnswers > localStorage.getItem('easyHighScore')) {
+            localStorage.setItem("easyHighScore", game.correctAnswers);
+        }
+        let easyTotal = ((localStorage.getItem('easyAverage') * localStorage.getItem('easyGames')) + game.correctAnswers);
+        let incrementEasyGames = Number(localStorage.getItem('easyGames')) + 1
+        localStorage.setItem("easyGames", incrementEasyGames);
+        let average = easyTotal / localStorage.getItem('easyGames');
+        localStorage.setItem("easyAverage", average);
+    }
+    if (game.level == 10) {
+        if (game.correctAnswers > localStorage.getItem('hardHighScore')) {
+            localStorage.setItem("hardHighScore", game.correctAnswers);
+        }
+        let hardTotal = ((localStorage.getItem('hardAverage') * localStorage.getItem('hardGames')) + game.correctAnswers);
+        let incrementHardGames = Number(localStorage.getItem('hardGames')) + 1
+        localStorage.setItem("hardGames", incrementHardGames);
+        let average = hardTotal / localStorage.getItem('hardGames');
+        localStorage.setItem("hardAverage", average);
+    }
+}
+
 // Resets the stars to all empty
 function resetStars() {
     $('.score-star').removeClass('fa-solid fa-star-half-stroke');
@@ -216,6 +245,7 @@ function finishGame() {
     $('.option').off("click");
     displayTrophy();
     fillStars();
+    updateStoredScores();
     setTimeout(function() {
         $('#endOfGameModal').modal('show');
         playCheerAudio();
