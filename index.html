@@ -96,17 +96,21 @@
                 </div>
                 <div class="modal-body stored-scores-display text-center container">
                     <div class="row">
-                        <div class="col-6" id="easy-scores">
+                        <div class="col-6">
                             <h5>Counting up to 5</h5>
+                            <p>High Score: <span id="easy-high"></span></p>
+                            <p>Average Score: <span id="easy-average"></span></p>
                         </div>
-                        <div class="col-6" id="hard-scores">
+                        <div class="col-6">
                             <h5>Counting up to 10</h5>
+                            <p>High Score: <span id="hard-high"></span></p>
+                            <p>Average Score: <span id="hard-average"></span></p>
                         </div>
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" data-bs-target="#startGameModal" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" id="close-high-scores-modal" data-bs-target="#startGameModal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -117,10 +121,11 @@
         aria-labelledby="endOfGameModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-background">
-                <div class="modal-header">
+                <div class="modal-header text-center">
                     <h1>Well done!</h1>
                 </div>
                 <div class="modal-body mx-auto text-center">
+                    <div id="newHighScore"></div>
                     <div id="trophy"></div>
                     <div id="finalScore"></div>
                     <div id="stars">

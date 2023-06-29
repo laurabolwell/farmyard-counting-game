@@ -211,6 +211,7 @@ function updateStoredScores() {
     if (game.level == 5) {
         if (game.correctAnswers > localStorage.getItem('easyHighScore')) {
             localStorage.setItem("easyHighScore", game.correctAnswers);
+            $('#newHighScore').append('<h3>New High Score!</h3>');
         }
         let easyTotal = ((localStorage.getItem('easyAverage') * localStorage.getItem('easyGames')) + game.correctAnswers);
         let incrementEasyGames = Number(localStorage.getItem('easyGames')) + 1
@@ -231,10 +232,12 @@ function updateStoredScores() {
 }
 
 function displayStoredScores() {
-    $('#easy-scores').append(`<p>High Score: ${localStorage.getItem('easyHighScore')}</p>`)
-    $('#easy-scores').append(`<p>Average Score: ${localStorage.getItem('easyAverage')}</p>`)
-    $('#hard-scores').append(`<p>High Score: ${localStorage.getItem('hardHighScore')}</p>`)
-    $('#hard-scores').append(`<p>Average Score: ${localStorage.getItem('hardAverage')}</p>`)
+    $('#easy-high').text(`${localStorage.getItem('easyHighScore')}`)
+    let roundedEasyAverage = Math.round(localStorage.getItem('easyAverage')*10)/10;
+    $('#easy-average').text(`${roundedEasyAverage}`)
+    $('#hard-high').text(`${localStorage.getItem('hardHighScore')}`)
+    let roundedHardAverage = Math.round(localStorage.getItem('hardAverage')*10)/10;
+    $('#hard-average').text(`${roundedHardAverage}`)
 }
 
 // Resets the stars to all empty
@@ -246,6 +249,7 @@ function resetStars() {
 // Removes the trophy from the modal
 function resetTrophy() {
     $('#trophy').empty();
+    $('#newHighScore').empty();
 }
 
 // Calls the fillStars function, then displays the endofGame modal
