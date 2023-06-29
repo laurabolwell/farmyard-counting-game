@@ -72,46 +72,47 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 ## Wireframes
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-### Home Page Wireframes
+### Start of Game Modal Wireframes
+
+<details>
+<summary>Click to see the Start of Game Modal Wireframes</summary>
 
 | Size | Screenshot |
 | --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
+| Mobile | ![screenshot](documentation/wireframes/mobile-start-modal.png) |
+| Tablet | ![screenshot](documentation/wireframes/tablet-start-modal.png) |
+| Desktop | ![screenshot](documentation/wireframes/desktop-start-modal.png) |
 
-### About Page Wireframes
+</details>
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-about.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-about.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-about.png) |
+### Main Game Page Wireframes
 
-### Contact Page Wireframes
+<details>
+<summary>Click to see the Main Game Page Page Wireframes</summary>
 
 | Size | Screenshot |
 | --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-contact.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-contact.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-contact.png) |
+| Mobile | ![screenshot](documentation/wireframes/mobile-main.png) |
+| Tablet | ![screenshot](documentation/wireframes/tablet-main.png) |
+| Desktop | ![screenshot](documentation/wireframes/desktop-main.png) |
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+</details>
 
-Repeat for any addition wireframe pages you have.
+### End of Game Modal Wireframes
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+<details>
+<summary>Click to see the End of Game Modal Wireframes</summary>
+
+| Size | Screenshot |
+| --- | --- |
+| Mobile | ![screenshot](documentation/wireframes/mobile-end-modal.png) |
+| Tablet | ![screenshot](documentation/wireframes/tablet-end-modal.png) |
+| Desktop | ![screenshot](documentation/wireframes/desktop-end-modal.png) |
+
+</details>
 
 ## Features
 
