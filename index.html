@@ -69,7 +69,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-background">
                 <div class="modal-header border-0">
-                    <button class="btn btn-primary btn-sm" data-bs-target="#highScoreModal" data-bs-toggle="modal"
+                    <button class="btn btn-danger view-scores" data-bs-target="#highScoreModal" data-bs-toggle="modal"
                         data-bs-dismiss="modal">View High Scores</button>
                     <h1 class="modal-title text-center">Welcome to Farmyard Counting!</h1>
                 </div>
@@ -92,9 +92,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-background">
                 <div class="modal-header">
-                    <h5 class="modal-title">High Scores</h5>
+                    <h1 class="modal-title text-center">High Scores</h1>
                 </div>
-                <div class="modal-body container">
+                <div class="modal-body stored-scores-display text-center container">
                     <div class="row">
                         <div class="col-6" id="easy-scores">
                             <h5>Counting up to 5</h5>
@@ -105,8 +105,8 @@
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#startGameModal" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Back to first</button>
+                    <button class="btn btn-danger" data-bs-target="#startGameModal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

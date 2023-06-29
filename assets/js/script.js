@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.menu, .sound, .reset, .difficulty').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
+    displayStoredScores();
 });
 
 // If sound is NOT muted: stops the current audio and plays the button click audio

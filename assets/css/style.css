@@ -92,11 +92,20 @@ header {
     justify-content: center;
     border: none;
     padding-bottom: 8px;
+    display: block;
 }
 
 .modal-image {
     height: 30vh;
     background: 
+}
+
+.view-scores {
+    padding: 6px;
+}
+
+.stored-scores-display {
+    font-size: smaller;
 }
 
 #stars {
