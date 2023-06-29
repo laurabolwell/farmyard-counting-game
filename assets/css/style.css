@@ -1,3 +1,10 @@
+:root {
+    --red: #DC3545;
+    --amber: #FFC107;
+    --light-amber: #FFD65C;
+    --green: #67C93E;
+}
+
 body {
     margin: 0;
     width: 100vw;
@@ -85,7 +92,7 @@ header {
 /* Modals */
 
 .modal-background {
-    background-color: #ffd65c;
+    background-color: var(--light-amber);
 }
 
 .modal-header {
@@ -120,7 +127,7 @@ header {
 #trophy {
     height: 50vh;
     width: 50vh;
-    background: #67C93E;
+    background: var(--green);
     border-radius: 50%;
     padding-top: 6vh;
 }
