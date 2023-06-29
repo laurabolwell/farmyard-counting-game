@@ -56,8 +56,10 @@
 
     <!-- Score area and reset button -->
     <footer class="score-area fixed-bottom">
-        <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-up"></i><span id="correct">0</span></button>
-        <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-down"></i><span id="incorrect">0</span></button>
+        <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-up"></i><span
+                id="correct">0</span></button>
+        <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-down"></i><span
+                id="incorrect">0</span></button>
         <button class="btn btn-danger btn-lg reset">Reset</button>
     </footer>
 
@@ -67,6 +69,8 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-background">
                 <div class="modal-header border-0">
+                    <button class="btn btn-primary btn-sm" data-bs-target="#highScoreModal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">View High Scores</button>
                     <h1 class="modal-title text-center">Welcome to Farmyard Counting!</h1>
                 </div>
                 <section class="modal-body mx-auto text-center">
@@ -78,6 +82,31 @@
                         id="easy-level">Counting up to 5</button>
                     <button type="button" class="btn btn-lg btn-danger difficulty" data-bs-dismiss="modal"
                         id="hard-level">Counting up to 10</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- High Scores Modal -->
+    <aside class="modal fade" id="highScoreModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="highScoreModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title">High Scores</h5>
+                </div>
+                <div class="modal-body container">
+                    <div class="row">
+                        <div class="col-6" id="easy-scores">
+                            <h5>Counting up to 5</h5>
+                        </div>
+                        <div class="col-6" id="hard-scores">
+                            <h5>Counting up to 10</h5>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#startGameModal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Back to first</button>
                 </div>
             </div>
         </div>
