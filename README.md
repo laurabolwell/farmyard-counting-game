@@ -1,32 +1,14 @@
-# FARMYARD COUNTING GAME
+# FARMYARD COUNTING
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+Farmyard Counting is a counting game aimed at young children of pre-school age and those just starting out in school. It has minimal and easy-to-operate controls, bright colors, two levels of difficulty and fun sound effects so that children can practise their counting and number recognition skills in an enjoyable way.
 
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
+The game is designed to be fully responsive, allowing it to be played on a wide range of devices.
 
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
 https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game
 
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
+![screenshot](documentation/amiiresponsive-screenshot.png)
 
-![screenshot](documentation/mockup.png)
-
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+I used http://ui.dev/amiresponsive[http://ui.dev/amiresponsive](https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game) to create this image.
 
 ## UX
 
@@ -363,7 +345,7 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 | [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
 | [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
 | [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [Tutorials Point](hhttps://www.tutorialspoint.com/How-can-I-round-a-number-to-1-decimal-place-in-JavaScript#:~:text=round()%20function%20rounds%20number,number%20to%20n%20decimal%20place.) | high score modal | how to round the average score to 1dp |
 
 ### Media
 
