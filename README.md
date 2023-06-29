@@ -302,40 +302,29 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 
 ### Media
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
 | [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
-| [Zapsplat](https://www.zapsplat.com/music/five-english-children-under-the-age-of-10-years-old-cheering-in-a-happy-or-excited-way/) | homepage | audio | children cheering |
-| [Zapsplat](https://www.zapsplat.com/music/bright-button-click-1/) | homepage | audio | button click |
-| [Zapsplat](hhttps://www.zapsplat.com/music/correct-answer-ping-chime-1/) | homepage | audio | correct answer |
-| [Zapsplat](https://www.zapsplat.com/music/game-sound-basic-digital-retro-incorrect-wrong-error-negative-tone-1/) | homepage | audio | incorrect answer |
-| [Zapsplat](https://www.zapsplat.com/music/sheep-baa/) | homepage | audio | sheep sound |
-| [Zapsplat](https://www.zapsplat.com/music/cow-moo-mooing-close-up-1/) | homepage | audio | cow sound |
-| [Zapsplat](https://www.zapsplat.com/music/horse-whinny-2/) | homepage | audio | horse sound |
-| [Zapsplat](https://www.zapsplat.com/music/cockerel-single-cluck-1/) | homepage | audio | chicken sound |
-| [Zapsplat](https://www.zapsplat.com/music/pig-grunting-designed-5/) | homepage | audio | pig sound |
-| [Zapsplat](https://www.zapsplat.com/music/goat-sheep-bleat-external/) | homepage | audio | goat sound |
+| [Pexels](https://www.freepik.com/free-vector/farm-landscape_985059.htm#&position=0&from_view=search&track=ais) | entire site | image | background image |
+| [Favicon.io](https://favicon.io/emoji-favicons/tractor) | entire site | favicon | favicon |
+| [Clipartmax](https://www.clipartmax.com/middle/m2i8i8N4G6K9d3N4_transparent-background-sheep-clipart/) | main game | image | sheep |
+| [Clipartmax](https://www.clipartmax.com/middle/m2i8H7A0G6Z5m2H7_cow-with-black-spots-clip-art-image-cute-white-cow-white-and/) | main game | image | cow |
+| [Clipartmax](https://www.clipartmax.com/middle/m2K9A0d3m2d3Z5K9_cute-goat-pictures-lyrics-goat-cartoon/) | main game | image | goat |
+| [Clipartmax](https://www.clipartmax.com/middle/m2K9A0d3N4d3d3A0_open-chicken-cartoon/) | main game | image | chicken |
+| [Clipartmax](https://www.clipartmax.com/middle/m2K9A0d3m2Z5N4G6_short-horse-transparent-background-horse-clipart/) | main game | image | horse |
+| [Clipartmax](https://www.clipartmax.com/middle/m2K9A0m2G6N4m2K9_clipart-of-pig-pigs-cartoon-kid-pigs-pinterest-clip-art-of-a/) | main game | image | pig |
+| [IMGBIN](https://imgbin.com/download/GD9iY2nY) | end of game modal | image | trophy |
+| [Clipartmax](https://www.clipartmax.com/middle/m2i8K9i8m2i8G6m2_police-clipart-philip-martin-filipino-farmer-clipart/) | start game modal | image | farmer |
+| [Zapsplat](https://www.zapsplat.com/music/five-english-children-under-the-age-of-10-years-old-cheering-in-a-happy-or-excited-way/) | end of game modal | audio | children cheering |
+| [Zapsplat](https://www.zapsplat.com/music/bright-button-click-1/) | entire site | audio | button click |
+| [Zapsplat](hhttps://www.zapsplat.com/music/correct-answer-ping-chime-1/) | main game page | audio | correct answer |
+| [Zapsplat](https://www.zapsplat.com/music/game-sound-basic-digital-retro-incorrect-wrong-error-negative-tone-1/) | main game page | audio | incorrect answer |
+| [Zapsplat](https://www.zapsplat.com/music/sheep-baa/) | main game page | audio | sheep sound |
+| [Zapsplat](https://www.zapsplat.com/music/cow-moo-mooing-close-up-1/) | main game page | audio | cow sound |
+| [Zapsplat](https://www.zapsplat.com/music/horse-whinny-2/) | main game page | audio | horse sound |
+| [Zapsplat](https://www.zapsplat.com/music/cockerel-single-cluck-1/) | main game page | audio | chicken sound |
+| [Zapsplat](https://www.zapsplat.com/music/pig-grunting-designed-5/) | main game page | audio | pig sound |
+| [Zapsplat](https://www.zapsplat.com/music/goat-sheep-bleat-external/) | main game page | audio | goat sound |
 
 ### Acknowledgements
 
