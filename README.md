@@ -4,9 +4,7 @@ Farmyard Counting is a counting game aimed at young children of pre-school age a
 
 The game is designed to be fully responsive, allowing it to be played on a wide range of devices.
 
-https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game
-
-![screenshot](documentation/amiiresponsive-screenshot.png)
+![screenshot](documentation/amiresponsive-screenshot.png)
 
 I used http://ui.dev/amiresponsive[http://ui.dev/amiresponsive](https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game) to create this image.
 
@@ -20,49 +18,23 @@ In this section, you will briefly explain your design processes.
 
 ### Colour Scheme
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+![screenshot](documentation/coolors-palette.png)
 
-Explain your colours and the colour scheme.
+The game uses bright, child-friendly colours. I used [coolors.co](https://coolors.co/67c93e-dc3545-ffc107-ffd65c) to generate my colour palette.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- `#000000` used for primary text.
-- `#E84610` used for primary highlights.
-- `#4A4A4F` used for secondary text.
-- `#009FE3` used for secondary highlights.
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Consider adding a link and screenshot for your colour scheme using "coolors".
-https://coolors.co/generate
-
-When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
-
-Example:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
-
-![screenshot](documentation/coolors.png)
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-If you've used CSS `:root` variables, consider also including a code snippet here!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+- `#FFC107` used for answer buttons and to highlight the score count.
+- `#DC3545` used for game control buttons.
+- `#FFD65C` used for background colour of modals.
+- `#67C93E` is the main colour of the main game background image and also used as the background for trophy display.
 
 I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
 
 ```css
 :root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
+    --red: #DC3545;
+    --amber: #FFC107;
+    --light-amber: #FFD65C;
+    --green: #67C93E;
 }
 ```
 
