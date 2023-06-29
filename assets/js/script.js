@@ -229,6 +229,13 @@ function updateStoredScores() {
     }
 }
 
+function displayStoredScores() {
+    $('#easy-scores').append(`<p>High Score: ${localStorage.getItem('easyHighScore')}</p>`)
+    $('#easy-scores').append(`<p>Average Score: ${localStorage.getItem('easyAverage')}</p>`)
+    $('#hard-scores').append(`<p>High Score: ${localStorage.getItem('hardHighScore')}</p>`)
+    $('#hard-scores').append(`<p>Average Score: ${localStorage.getItem('hardAverage')}</p>`)
+}
+
 // Resets the stars to all empty
 function resetStars() {
     $('.score-star').removeClass('fa-solid fa-star-half-stroke');
@@ -246,6 +253,7 @@ function finishGame() {
     displayTrophy();
     fillStars();
     updateStoredScores();
+    displayStoredScores();
     setTimeout(function() {
         $('#endOfGameModal').modal('show');
         playCheerAudio();
