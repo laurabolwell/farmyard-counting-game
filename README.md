@@ -46,19 +46,13 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 ## User Stories
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+### Players (age 2-5)
 
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-### New Site Users
-
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a player, I would like to easily find and understand the controls, so that I can play independently.
+- As a player, I would like easy to operate controls, so that I can play on all devices.
+- As a player, I would like to ____________, so that I can ____________.
+- As a player, I would like to ____________, so that I can ____________.
+- As a player, I would like to ____________, so that I can ____________.
 
 ### Returning Site Users
 
@@ -184,15 +178,6 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 
 ## Tools & Technologies Used
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
@@ -258,32 +243,11 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on GitHub Pages.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+There are no known differences between the local and the deployed version.
 
 ## Credits
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Content
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | Source | Location | Notes |
 | --- | --- | --- |
@@ -328,15 +292,7 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 
 ### Acknowledgements
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+- I would like to thank my phusband, for believing in me, and supporting me in making this transition into software development.
