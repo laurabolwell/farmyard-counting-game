@@ -21,7 +21,6 @@ localStorage.setItem("hardGames", 0);
 
 // Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
 document.addEventListener("DOMContentLoaded", function() {
-    $('.reset').click(playGame);
     $('.sound').click(function() {
         $(".sound-icon").toggleClass("hidden");
         game.muted = !game.muted;
@@ -30,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#startGameModal').modal('show');
     getLevel();
     displayStoredScores();
+    $('.high-scores-btn').click(function() {
+        $('#highScoreModal').modal('show');
+    });
 });
 
 // If sound is NOT muted: stops the current audio and plays the button click audio
@@ -266,3 +268,4 @@ function finishGame() {
     // $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
     $('#play-again').click(playGame);
 }
+

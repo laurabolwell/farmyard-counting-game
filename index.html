@@ -54,13 +54,13 @@
         </div>
     </section>
 
-    <!-- Score area and reset button -->
+    <!-- Score area -->
     <footer class="score-area fixed-bottom">
         <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-up"></i><span
                 id="correct">0</span></button>
         <button class="scores btn btn-warning btn-lg"><i class="fa-regular fa-thumbs-down"></i><span
                 id="incorrect">0</span></button>
-        <button class="btn btn-danger btn-lg reset">Reset</button>
+        <button class="btn btn-danger btn-lg high-scores-btn">High Scores</button>
     </footer>
 
     <!-- Start of game modal -->
@@ -69,8 +69,6 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-background">
                 <div class="modal-header border-0">
-                    <button class="btn btn-danger view-scores" data-bs-target="#highScoreModal" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">View High Scores</button>
                     <h1 class="modal-title text-center">Welcome to Farmyard Counting!</h1>
                 </div>
                 <section class="modal-body mx-auto text-center">
@@ -88,7 +86,7 @@
     </aside>
 
     <!-- High Scores Modal -->
-    <aside class="modal fade" id="highScoreModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="highScoreModal" tabindex="-1">
+    <aside class="modal fade" id="highScoreModal" aria-hidden="true" aria-labelledby="highScoreModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-background">
                 <div class="modal-header">
@@ -109,8 +107,7 @@
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" id="close-high-scores-modal" data-bs-target="#startGameModal" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
