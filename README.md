@@ -152,6 +152,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
     - Buttons are spaced out vertically to avoid accidental clicking of wrong buttons
     - Different audio sounds are played each time an answer is clicked to indicate if it was correct or incorrect
+    - Once the game has finished (ie the 10th question has been answered), click listeners are removed from the options buttons and re-added when the new game is triggered
 
 ![screenshot](documentation/features/options-buttons-five.png)
 ![screenshot](documentation/features/options-buttons-ten.png)
@@ -274,15 +275,19 @@ There are no known differences between the local and the deployed version.
 | --- | --- | --- |
 | [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [Code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JT101+2021_T1/courseware/6175d249ea924b1b8d315ba8e7bb1626/3016ddc8b0004e79b89d711cdf5af0df/) | game object | inspiration to use a game object came from the CI jest testing walkthrough project |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | modals | interactive pop-up (modal) |
+| [Bootstrap](https://getbootstrap.com/docs/5.0/components/modal/) | modals | code used and adapted to create modals |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [W3Schools](https://www.w3schools.com/jquery/) | entire site | jquery tutorial |
+| [W3Schools](https://www.w3schools.com/jquery/jquery_dom_add.asp/) | entire site | jquery how to add elements |
+| [W3Schools](https://www.w3schools.com/jquery/jquery_events.asp) | entire site | jquery how to add event listeners |
+| [jQuery](https://api.jquery.com/off/) | entire site | jquery how to remove event listeners |
+| [W3Schools](https://www.w3schools.com/js/js_random.asp) | entire site | how to generate random numbers |
+| [W3Schools](https://www.w3schools.com/js/js_string_templates.asp) | entire site | javascript how to use template literals |
 | [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | high scores modal | using `localStorage()` in JS for high scores |
+| [JavaScript30](https://courses.wesbos.com/account/access/649c2e0114596932b446ebe6/view/194129092) | high scores modal | using `localStorage()` in JS for high scores |
 | [Tutorials Point](hhttps://www.tutorialspoint.com/How-can-I-round-a-number-to-1-decimal-place-in-JavaScript#:~:text=round()%20function%20rounds%20number,number%20to%20n%20decimal%20place.) | high score modal | how to round the average score to 1dp |
 
 ### Media

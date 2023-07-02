@@ -12,12 +12,12 @@ let game = {
     muted: true
 };
 
-localStorage.setItem("easyHighScore", 0);
-localStorage.setItem("hardHighScore", 0);
-localStorage.setItem("easyAverage", 0);
-localStorage.setItem("hardAverage", 0);
-localStorage.setItem("easyGames", 0);
-localStorage.setItem("hardGames", 0);
+// localStorage.setItem("easyHighScore", 0);
+// localStorage.setItem("hardHighScore", 0);
+// localStorage.setItem("easyAverage", 0);
+// localStorage.setItem("hardAverage", 0);
+// localStorage.setItem("easyGames", 0);
+// localStorage.setItem("hardGames", 0);
 
 // Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
 document.addEventListener("DOMContentLoaded", function() {
