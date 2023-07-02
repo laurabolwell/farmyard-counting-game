@@ -10,11 +10,7 @@ I used http://ui.dev/amiresponsive[http://ui.dev/amiresponsive](https://ui.dev/a
 
 ## UX
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you will briefly explain your design processes.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+The main goal of Farmyard Counting is to encourage young children to practise their counting and number recognition skills in a fun and enjoyable way. It is aimed at children aged 2-5, and must also appeal to their parents who will be the ones selecting the games that their children play. 
 
 ### Colour Scheme
 
@@ -43,6 +39,12 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - [Short stack](https://fonts.google.com/specimen/Short+Stack) was used for all text on the game screen and the modals.
 
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as sound icon and the score counters.
+
+### Other design choices
+
+- Minimal use of text, instructions etc. The game is designed to be so simple to understand and navigate that there is no need for lengthy written instructions. The target audience of the game cannot yet read so I have chosen not to clutter the screen with unnecessary text.
+
+- Removed reset button from main game screen. I had originally positioned a reset button on the bottom corner of the screen which was useful during the development of the game, but completely unnecessary for game play for children. Parents can easily reset the game if they so wish by clicking the menu button and reselecting the level.
 
 ## User Stories
 
@@ -112,66 +114,88 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Existing Features
 
 - **Start of Game Modal**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This modal pops up when the page is loaded.+
+    - Gives the user the choice of 2 levels of difficulty
+    - Has no close button and has a static backdrop so that the user cannot progress without choosing a level of difficulty
+    - Minimal text and a large obvious button for each level so that children can proceed with the game even if parents are not present to select the level
 
-![screenshot](documentation/feature01.png)
+![screenshot](documentation/features/start-of-game-modal.png)
 
-- **Title for feature #2**
+- **Menu button**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Positioned prominently in the top left corner of the screen
+    - Reloads the start of game modal at any point during play
 
-![screenshot](documentation/feature02.png)
+![screenshot](documentation/features/menu-button.png)
 
-- **Title for feature #3**
+- **Mute button**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Positioned in the top right corner of the screen
+    - Speaker icons used rather than text
+    - This button toggles the sound on and off
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/features/mute-button.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- **Score area**
 
-Repeat as necessary for as many features as your site contains.
+    - Thumbs up and thumbs down icons to show the number of correct and incorrect answers
+    - Button to display high scores modal
 
-Hint: the more, the merrier!
+![screenshot](documentation/features/score-area.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+
+- **Options buttons**
+
+    - Buttons are spaced out vertically to avoid accidental clicking of wrong buttons
+    - Different audio sounds are played each time an answer is clicked to indicate if it was correct or incorrect
+
+![screenshot](documentation/features/options-buttons-five.png)
+![screenshot](documentation/features/options-buttons-ten.png)
+
+- **Game area**
+
+    - Bright, eye-catching farm background picture
+    - For each question an animal is randomly selected and a random number of them are displayed on the game area
+    - Two consecutive questions will never have the same animal or the same number
+    - The appropriate animal sound is played when an animal is clicked (I have chosen not to play the animal noise audio on hover too as this may become too distracting if the child is using the pointer to count the animals)
+
+![screenshot](documentation/features/game-area.png)
+
+- **End of game modal**
+
+    - Once the player has finished the game (10 questions), this modal will display on the screen
+    - Displays a bronze, silver, or gold trophy depending on the number of correct answers
+    - Displays a visual representation as a number of stars (out of 5)
+    - Displays a 'New High Score' comment to the modal if the player has beaten the previous high score
+    - Plays audio of children cheering
+    - 'Play again' button to reset the game and start another series of questions
+    - Static backdrop so that a player cannot close the modal without triggering a new game
+
+![screenshot](documentation/features/end-of-game-modal.png)
+
+- **High scores modal**
+
+    - Displays a high score for both levels of difficulty
+    - Displays an average score for both levels of difficulty (rounded to one decimal place of accuracy)
+    - Has a prominent close button at the bottom of the modal but this can also be closed by clicking anywhere on the screen
+
+![screenshot](documentation/features/high-scores-modal.png)
+
+- **Button click audio**
+
+    - Button click audio on all buttons in game gives the player feedback when they have clicked on something
+
 
 ### Future Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Title for future feature #1
-    - Any additional notes about this feature.
-- Title for future feature #2
-    - Any additional notes about this feature.
-- Title for future feature #3
-    - Any additional notes about this feature.
+- Expanded to additional levels of difficulty
+    - The game could be extended to provide an 'Counting to 20' option.
+- Option to display the answer choices as words
+    - The answer choices buttons could be displayed as words rather than digits (ie 'one' rather than '1') so that children can practice recognising numbers written in words. This would make the game suitable for a wider age range.
 
 ## Tools & Technologies Used
 
