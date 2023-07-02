@@ -49,26 +49,22 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 ### Players (age 2-5)
 
 - As a player, I would like to easily find and understand the controls, so that I can play independently.
-- As a player, I would like easy to operate controls, so that I can play on all devices.
-- As a player, I would like to ____________, so that I can ____________.
-- As a player, I would like to ____________, so that I can ____________.
-- As a player, I would like to ____________, so that I can ____________.
+- As a player, I would like easy to operate controls, so that my little fingers can use them.
+- As a player, I would like the game to be fun, so that I want to keep playing.
+- As a player, I would like to see bright images and fun sounds, so that I want to keep playing.
+- As a player, I would like the game to have minimal text on the screen, as I am too young to read it.
+- As a player, I would like to be rewarded for correct answers, so that I can see the progress I am making.
+- As a player, I would like the game to be robust enough to handle my unpredictable use of it.
 
-### Returning Site Users
+### Parents of players
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a parent, I would like the game to have clear static objects to count, so that my child can improve their counting skills.
+- As a parent, I would like the game to have clear written digits to choose answers from, so that my child can improve their number recognition skills.
+- As a parent, I would like the game to store scores from previous games, so that I can see how my child is progressing.
+- As a parent, I would like the game to have different levels of difficulty, so that it has longevity.
+- As a parent, I would like to have a mute button, so that I can turn the sound off when playing in a public place (or when it becomes annoying!).
+- As a parent, I would like the game to be easily operated and not able to be broken by a toddler playing it, so that my child can play independently without regular input from me.
 
-### Site Admin
-
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
 
 ## Wireframes
 
@@ -133,7 +129,7 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ### Existing Features
 
-- **Title for feature #1**
+- **Start of Game Modal**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
