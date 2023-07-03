@@ -151,15 +151,15 @@ header {
 }
 
 #trophy img {
-    height: 40vh;
+    height: 30vh;
 }
 
 #trophy {
-    height: 50vh;
-    width: 50vh;
+    height: 35vh;
+    width: 35vh;
     background: var(--green);
     border-radius: 50%;
-    padding-top: 6vh;
+    padding-top: 4.2vh;
 }
 
 
@@ -205,7 +205,6 @@ header {
     .score-area i {
         padding-right: 0px;
     }
-
     .scores {
         padding: 8px 2px;
     }
