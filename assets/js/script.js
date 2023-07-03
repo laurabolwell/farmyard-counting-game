@@ -156,11 +156,7 @@ function selectAnimal() {
 function displayQuestion() {
     selectAnimal();
     for (let i = 0; i < game.currentQuestion; i++) {
-        if (game.level == 5) {
-            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);  
-        } else if (game.level == 10) {
-            $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);
-        }
+        $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);  
     }
     $('.animal').click(playAnimalSound);
 }
