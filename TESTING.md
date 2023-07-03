@@ -77,12 +77,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | Location | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
 | Start Game Modal | | | | |
-| | Click outside of startGameModal  | Modal will not close | Pass | User forced to select a level button to continue |
+| | Click outside of start modal  | Modal will not close | Pass | User forced to select a level button to continue |
 | | Click on 'Counting to 5'  | Game starts on easy level | Pass | Options buttons and animals load as expected |
 | | Click on 'Counting to 10'  | Game starts on easy level | Pass | Options buttons and animals load as expected |
-
 | Main game area | | | | |
-| | Click on sound button | Icon changes from muted speaker to speaker with sound and audio is turned on | Pass |  Button click sound heard to confirm|
+| | Click on sound button | Icon changes from muted speaker to speaker with sound and audio is turned on | Pass |  Button click sound heard to confirm |
 | | Click on 'Menu' button | StartGameModal loads, button click audio heard | Pass | |
 | | Click on 'High scores' button | HighScoresModal loads, button click audio heard | Pass | |
 | | Click on animal | Appropriate animal audio plays | Pass | Animal sounds can be played in quick succession |
@@ -93,37 +92,14 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on incorrect option button (10th question) | Incorrect audio plays, incorrect score counter increments, endOfGameModal loads | Pass | |
 | | Click on option button (after 10th question) | No sound, no score incremented, endOfGameModal loads| Pass | |
 | End of Game Modal | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
+| | Click outside of modal | Modal will not close | Pass | User forced to click 'Play Again!' and trigger the new game |
+| | Click on 'Play Again!' button | Modal closes and new game begins | Pass | |
 | High Scores Modal | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| | Click outside of modal | Modal closes | Pass | Game continues as expected |
+| | Click 'Close' button | Modal closes | Pass | Game continues as expected |
+| | Click 'Reset High Scores' button | High scores all set to zero | Pass | High and average scores all set to 0 and instantly updated on modal|
+| | Click on 'High Scores' button (after 10th question but before endOfGameModal loads) | High score modal shows, then endOfGameModal still loads as expected | Pass | Need to click 'Play again' on endOfGameModal to trigger the new game and close the modal, when this happens the high scores modal is visible underneath with the updated score |
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## User Story Testing
 
