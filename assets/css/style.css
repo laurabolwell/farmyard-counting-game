@@ -41,7 +41,7 @@ header {
 
 /* Hidden class to hide non-active sound button */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Main Game Area */
