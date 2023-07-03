@@ -165,6 +165,9 @@ header {
     .small-screen-br {
         display: none;
     }
+    .high-scores-btn {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 450px) {
