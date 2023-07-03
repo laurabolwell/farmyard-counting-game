@@ -67,8 +67,8 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-home-mobile.png) | No major issues |
-| Home | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png) | No major issues |
+| Home | Mobile | ![screenshot](documentation/testing/lighthouse-testing/lighthouse-mobile.png) | No major issues |
+| Home | Desktop | ![screenshot](documentation/testing/lighthouse-testing/lighthouse-desktop.png) | No major issues |
 
 ## Defensive Programming
 
