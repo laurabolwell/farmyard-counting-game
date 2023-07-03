@@ -103,28 +103,21 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## User Story Testing
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-| User Story | Screenshot |
-| --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+| User Story | Screenshot | Comment |
+| --- | --- | --- |
+| As a player, I would like to easily find and understand the controls, so that I can play independently. | ![screenshot](documentation/features/options-buttons-five.png) | Game starts automatically |
+| As a player, I would like easy to operate controls, so that my little fingers can use them. | ![screenshot](documentation/features/options-buttons-five.png) | All bright easy to spot buttons, with good spacing between to avoid accidental presses |
+| As a player, I would like the game to be fun, so that I want to keep playing. | ![screenshot](documentation/features/game-area.png) | Bright colours, fun images and sounds |
+| As a player, I would like to see bright images and fun sounds, so that I want to keep playing. | ![screenshot](documentation/features/game-area.png) | Bright colours, fun images and sounds |
+| As a player, I would like the game to have minimal text on the screen, as I am too young to read it. | ![screenshot](documentation/features/game-area.png) | Only buttons for parental use have text |
+| As a player, I would like to be rewarded for correct answers, so that I can see the progress I am making. | ![screenshot](documentation/features/end-of-game-modal.png) | Audio feedback for each correct answer, audio and visual feedback at end of game |
+| As a player, I would like the game to be robust enough to handle my unpredictable use of it. | ![screenshot](documentation/features/start-of-game-modal.png) | Cannot start game without selecting a level, cannot click options after game has finished, can click multiple buttons in quick succession without 'breaking' the game. See defensive programming section for more details |
+| As a parent, I would like the game to have clear static objects to count, so that my child can improve their counting skills. | ![screenshot](documentation/features/game-area.png) | Can choose between up to 5 objects or up to 10 objects|
+| As a parent, I would like the game to have clear written digits to choose answers from, so that my child can improve their number recognition skills. | ![screenshot](documentation/features/options-buttons-five.png) | Can choose between numbers to 5 or numbers to 10 |
+| As a parent, I would like the game to store scores from previous games, so that I can see how my child is progressing. | ![screenshot](documentation/features/high-scores-modal.png) | Shows high score and average score for each level of difficulty |
+| As a parent, I would like the game to have different levels of difficulty, so that it has longevity. | ![screenshot](documentation/features/start-of-game-modal.png) | Must select level at the start of the game |
+| As a parent, I would like to have a mute button, so that I can turn the sound off when playing in a public place (or when it becomes annoying!). | ![screenshot](documentation/features/mute-button.png) | |
+| As a parent, I would like the game to be easily operated and not able to be broken by a toddler playing it, so that my child can play independently without regular input from me. | ![screenshot](documentation/features/game-area.png) | Cannot start game without selecting a level, cannot click options after game has finished, can click multiple buttons in quick succession without 'breaking' the game. See defensive programming section for more details |
 
 ## Automated Testing
 
