@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $(".sound-icon").toggleClass("hidden");
         game.muted = !game.muted;
     });
-    $('.menu, .sound, .high-scores-btn, #reset-scores-btn, .btn-close, .difficulty').click(playButtonClickAudio);
+    $('.menu, .sound, .high-scores-btn, #reset-scores-btn, .modal-close-btn, .difficulty').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
     $('.high-scores-btn').click(displayHighScoresModal);
