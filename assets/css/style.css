@@ -129,7 +129,7 @@ header {
 }
 
 .modal-footer {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     border: none;
     padding-top: 8px;
@@ -178,6 +178,7 @@ header {
         display: none;
     }
 }
+
 /* Makes the font-size smaller on the high scores button on small screens */
 @media screen and (max-width: 540px) {
     .high-scores-btn {
@@ -199,6 +200,7 @@ header {
     .score-area i {
         padding-right: 0px;
     }
+
     .scores {
         padding: 8px 2px;
     }
