@@ -1,5 +1,6 @@
 /* jshint esversion: 11, jquery: true */
 
+// Game object storing the current state of the game
 let game = {
     level: 5,
     correctAnswers: 0,
@@ -12,41 +13,22 @@ let game = {
     muted: true
 };
 
-// Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
-document.addEventListener("DOMContentLoaded", function() {
-    $('.sound').click(function() {
+/* 
+ * Adds event listener to sound button so it can toggle the sound on and off,
+ * adds event listeners to menu, difficulty, sound, and high score buttons to play button click Audio,
+ * loads the start of game modal, waits for level to be selected
+ * adds event listener to high scores button so it can display the high scores modal
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    $('.sound').click(function () {
         $(".sound-icon").toggleClass("hidden");
         game.muted = !game.muted;
     });
-    $('.menu, .sound, .reset, .difficulty').click(playButtonClickAudio);
+    $('.menu, .sound, #reset-scores-btn, .difficulty').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
-    checkForStoredScores();
-    displayStoredScores();
-    $('.high-scores-btn').click(function() {
-        $('#highScoreModal').modal('show');
-    });
-    $('#reset-scores-btn').click(resetStoredScores);
+    $('.high-scores-btn').click(displayHighScoresModal);
 });
-
-function checkForStoredScores() {
-    if (localStorage.getItem('easyHighScore') === null) {
-        localStorage.setItem('easyHighScore', 0);
-    }
-    if (localStorage.getItem('hardHighScore') === null) {
-        localStorage.setItem('hardHighScore', 0);
-    }
-}
-
-function resetStoredScores() {
-localStorage.setItem("easyHighScore", 0);
-localStorage.setItem("hardHighScore", 0);
-localStorage.setItem("easyAverage", 0);
-localStorage.setItem("hardAverage", 0);
-localStorage.setItem("easyGames", 0);
-localStorage.setItem("hardGames", 0);
-displayStoredScores();
-}
 
 // If sound is NOT muted: stops the current audio and plays the button click audio
 function playButtonClickAudio() {
@@ -54,7 +36,7 @@ function playButtonClickAudio() {
         $('.currentAudio')[0].load()
         $('audio').removeClass('currentAudio');
         $('#buttonClickAudio')[0].play();
-        $('#buttonClickAudio').addClass('currentAudio')  
+        $('#buttonClickAudio').addClass('currentAudio')
     }
 }
 
@@ -64,7 +46,7 @@ function playIncorrectAudio() {
         $('.currentAudio')[0].load()
         $('audio').removeClass('currentAudio');
         $('#incorrectAudio')[0].play();
-        $('#incorrectAudio').addClass('currentAudio') 
+        $('#incorrectAudio').addClass('currentAudio')
     }
 }
 
@@ -105,25 +87,29 @@ function getLevel() {
 
 // Updates the level in the game object and then starts a new game
 function setLevel() {
-  if (this.getAttribute("id") === "easy-level") {
-    game.level = 5;
-    playGame();
-  } else if (this.getAttribute("id") === "hard-level") {
-    game.level = 10;
-    playGame();
-  }
+    if (this.getAttribute("id") === "easy-level") {
+        game.level = 5;
+        playGame();
+    } else if (this.getAttribute("id") === "hard-level") {
+        game.level = 10;
+        playGame();
+    }
 }
 
-// Resets the question and answer counts in the game object, displays the options buttons and adds event listeners to them, 
-// shows the starting score of 0 and then calls the newQuestion function
+/* 
+ * Resets the question and answer counts in the game object,
+ * resets the stars and trophy in end of game modal
+ * displays the options buttons and adds event listeners to them, 
+ * shows the starting scores of 0,
+ * then calls the newQuestion function
+ */
 function playGame() {
     game.correctAnswers = 0;
     game.incorrectAnswers = 0;
     game.questionCount = 0;
-    resetStars();
-    resetTrophy();
+    resetEndOfGameModal();
     displayOptions();
-    $('.option').on('click', function() {
+    $('.option').on('click', function () {
         game.playerAnswer = this.innerText;
         checkAnswer();
     });
@@ -131,8 +117,27 @@ function playGame() {
     newQuestion();
 }
 
-//Clears question-area, selects random number from 1-5/1-10 (reselects if it is the same as the last question),
-// assigns it to game.currentQuestion, then calls the displayQuestion function
+// Clears the options area and then creates a button for each of the 5 or 10 options
+function displayOptions() {
+    $('#options-area').empty();
+    for (let i = 0; i < game.level; i++) {
+        $('#options-area').append(`<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`);
+    }
+}
+
+// Updates the screen with the scores stored in the game object
+function showScore() {
+    document.getElementById("correct").innerText = game.correctAnswers;
+    document.getElementById("incorrect").innerText = game.incorrectAnswers;
+}
+
+/*
+ * Clears previous question from the questionarea, 
+ * selects random number from 1-5/1-10 depending on level chosen,
+ * checks if it is the same as the previous question (and selects again if it is),
+ * assigns it to game.currentQuestion,
+ * then calls the displayQuestion function
+ */
 function newQuestion() {
     $('#question-area').empty();
     let nextQuestion = Math.floor((Math.random() * game.level) + 1);
@@ -143,7 +148,7 @@ function newQuestion() {
     displayQuestion();
 }
 
-// Selects an animal at random and reselects if it is the same as the last question
+// Selects an animal at random, checks if it is the same as the previous question, and selects again if it is
 function selectAnimal() {
     let nextAnimal = game.animals[Math.floor(Math.random() * game.animals.length)];
     while (nextAnimal == game.currentAnimal) {
@@ -152,24 +157,27 @@ function selectAnimal() {
     game.currentAnimal = nextAnimal;
 }
 
-// Displays the number of animals required for the current question
+/* Calls the selectAnimal function to select an animal,
+ * adds the required number of animal images to the question area,
+ * adds event listeners to play the appropriate animal sound when the animals are clicked
+ */
 function displayQuestion() {
     selectAnimal();
     for (let i = 0; i < game.currentQuestion; i++) {
-        $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);  
+        $('#question-area').append(`<img src="assets/images/${game.currentAnimal}.png" class="animal img-fluid" alt=${game.currentAnimal}>`);
     }
     $('.animal').click(playAnimalSound);
 }
 
-// Clears the options area and then creates a button for each of the 5 or 10 options
-function displayOptions() {
-    $('#options-area').empty();
-    for (let i=0; i < game.level; i++) {
-        $('#options-area').append(`<button id="button-${i+1}" class="btn btn-lg btn-warning option">${i+1}</button>`);
-    }
-}
-
-// Listens for user answer and checks if it is correct, then increments game.correctAnswers or game.incorrectAnswers
+/*
+ * checkAnswer() is called when a player clicks on one of the answer options buttons,
+ * it checks if the answer the player has clicked is correct,
+ * plays the appropriate audio (if the game is not muted),
+ * increments the correct or incorrect answer count in the game object,
+ * updates the score on the screen,
+ * then checks if the game has finished (ie 10 questions have been answered),
+ * and either loads the next question or calls the finishGame function()
+ */
 function checkAnswer() {
     let isCorrect = game.currentQuestion == game.playerAnswer;
     if (isCorrect) {
@@ -188,16 +196,52 @@ function checkAnswer() {
     }
 }
 
-// Updates the screen with the scores stored in the game object
-function showScore() {
-    document.getElementById("correct").innerText = game.correctAnswers;
-    document.getElementById("incorrect").innerText = game.incorrectAnswers;
+/*
+ * Turns off the click listener on the options buttons,
+ * calls updateStoredScores() to update the high score and average score in local storage,
+ * calls updateEndOfGameModal() to display the correct trophy and number of stars,
+ * shows the end of game modal (and plays the cheer audio if game is not muted),
+ * adds a click listener to the play again button so user can trigger a new game
+ */
+function finishGame() {
+    $('.option').off("click");
+    updateStoredScores();
+    updateEndOfGameModal();
+    setTimeout(function () {
+        $('#endOfGameModal').modal('show');
+        playCheerAudio();
+    }, 1000);
+    $('#play-again').click(playGame);
+}
+
+// Calls the resetStars and resetTrophy to clear the end of game modal
+function resetEndOfGameModal() {
+    resetStars();
+    resetTrophy();
+}
+
+// Resets the stars to all empty
+function resetStars() {
+    $('.score-star').removeClass('fa-solid fa-star-half-stroke');
+    $('.score-star').addClass('fa-regular fa-star');
+}
+
+// Removes the trophy from the modal
+function resetTrophy() {
+    $('#trophy').empty();
+    $('#newHighScore').empty();
+}
+
+// Calls the fillStars and displayTrophy function to display results of game 
+function updateEndOfGameModal() {
+    fillStars();
+    displayTrophy();
 }
 
 // Fills the required number of stars based on player score out of 10
 function fillStars() {
-let numberOfStars = Math.floor(game.correctAnswers / 2);
-    for (let i=0; i < numberOfStars; i++) {
+    let numberOfStars = Math.floor(game.correctAnswers / 2);
+    for (let i = 0; i < numberOfStars; i++) {
         $(`#star${i+1}`).removeClass("fa-regular").addClass("fa-solid");
     }
     if (game.correctAnswers % 2 != 0) {
@@ -205,20 +249,52 @@ let numberOfStars = Math.floor(game.correctAnswers / 2);
     }
 }
 
+// Check the number of correct answers and displays the appropriate bronze/silver/gold trophy
 function displayTrophy() {
     let trophyColor = "";
     if (game.correctAnswers <= 4) {
         trophyColor = 'bronze';
-    }
-    else if (game.correctAnswers <= 7) {
+    } else if (game.correctAnswers <= 7) {
         trophyColor = 'silver';
-    }
-    else {
+    } else {
         trophyColor = 'gold';
     }
     $('#trophy').append(`<img src="assets/images/${trophyColor}-trophy.png" alt=${trophyColor}-trophy>`);
 }
 
+/*
+ * Calls checkForStoredScores to check if high scores already exist,
+ * displays the scores stored in local storage,
+ * adds a click listener to the reset scores button so it can reset the scores,
+ * then shows the high scores modal
+ */
+function displayHighScoresModal() {
+    checkForStoredScores();
+    displayStoredScores();
+    $('#reset-scores-btn').click(resetStoredScores);
+    $('#highScoreModal').modal('show');
+}
+
+/*
+ * Checks if there are any high scores in local storage for each level,
+ * if not, it sets the high score to 0
+ */
+function checkForStoredScores() {
+    if (localStorage.getItem('easyHighScore') === null) {
+        localStorage.setItem('easyHighScore', 0);
+    }
+    if (localStorage.getItem('hardHighScore') === null) {
+        localStorage.setItem('hardHighScore', 0);
+    }
+}
+
+/*
+ * For each level: checks if the current game score is higher than the stored high score,
+ * if it is, then the stored high score is overwritten,
+ * and a 'New High Score!' message is added to the modal.
+ * Calculates a new average score incorporating the latest game score
+ * and updates this average in local storage
+ */
 function updateStoredScores() {
     if (game.level == 5) {
         if (game.correctAnswers > localStorage.getItem('easyHighScore')) {
@@ -243,39 +319,23 @@ function updateStoredScores() {
     }
 }
 
+// Updates the high scores and average scores on the high scores modal, average score is rounded to 1 decimal place
 function displayStoredScores() {
     $('#easy-high').text(`${localStorage.getItem('easyHighScore')}`)
-    let roundedEasyAverage = Math.round(localStorage.getItem('easyAverage')*10)/10;
+    let roundedEasyAverage = Math.round(localStorage.getItem('easyAverage') * 10) / 10;
     $('#easy-average').text(`${roundedEasyAverage}`)
     $('#hard-high').text(`${localStorage.getItem('hardHighScore')}`)
-    let roundedHardAverage = Math.round(localStorage.getItem('hardAverage')*10)/10;
+    let roundedHardAverage = Math.round(localStorage.getItem('hardAverage') * 10) / 10;
     $('#hard-average').text(`${roundedHardAverage}`)
 }
 
-// Resets the stars to all empty
-function resetStars() {
-    $('.score-star').removeClass('fa-solid fa-star-half-stroke');
-    $('.score-star').addClass('fa-regular fa-star');
-}
-
-// Removes the trophy from the modal
-function resetTrophy() {
-    $('#trophy').empty();
-    $('#newHighScore').empty();
-}
-
-// Calls the fillStars function, then displays the endofGame modal
-function finishGame() {
-    $('.option').off("click");
-    displayTrophy();
-    fillStars();
-    updateStoredScores();
+// Resets all scores stored in local storage to 0
+function resetStoredScores() {
+    localStorage.setItem("easyHighScore", 0);
+    localStorage.setItem("hardHighScore", 0);
+    localStorage.setItem("easyAverage", 0);
+    localStorage.setItem("hardAverage", 0);
+    localStorage.setItem("easyGames", 0);
+    localStorage.setItem("hardGames", 0);
     displayStoredScores();
-    setTimeout(function() {
-        $('#endOfGameModal').modal('show');
-        playCheerAudio();
-    }, 1000);
-    // $('#finalScore').html(`Your score is ${game.correctAnswers} out of ${game.questionCount}`);
-    $('#play-again').click(playGame);
 }
-
