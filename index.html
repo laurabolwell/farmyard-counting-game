@@ -48,14 +48,14 @@
     </header>
 
     <!-- Game area -->
-    <section class="container-fluid game-area">
+    <div class="container-fluid game-area">
         <div class="row">
             <div class="col-10" id="question-area">
             </div>
             <div class="col-2" id="options-area">
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Score area -->
     <footer class="score-area fixed-bottom">
@@ -74,10 +74,10 @@
                 <div class="modal-header border-0">
                     <h1 class="modal-title text-center">Welcome to Farmyard Counting!</h1>
                 </div>
-                <section class="modal-body mx-auto text-center">
+                <div class="modal-body mx-auto text-center">
                     <img class="modal-image" src="assets/images/farmer.png" alt="farmer">
                     <p class="text-center">Farmer Bill needs to count his animals. Can you help him?</p>
-                </section>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-lg btn-danger difficulty" data-bs-dismiss="modal"
                         id="easy-level">Counting up to 5</button>
@@ -108,7 +108,7 @@
                             <p>High Score: <span id="hard-high"></span></p>
                             <p>Average Score: <span id="hard-average"></span></p>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger btn-lg" data-bs-dismiss="modal">Close</button>
@@ -156,7 +156,7 @@
     <audio id="pigAudio" src="assets/audio/pig.mp3"></audio>
     <audio id="chickenAudio" src="assets/audio/chicken.mp3"></audio>
     <audio id="horseAudio" src="assets/audio/horse.mp3"></audio>
-   
+
     <!-- link to JS file -->
     <script src="assets/js/script.js"></script>
 </body>
