@@ -136,7 +136,7 @@ header {
 }
 
 .modal-image {
-    height: 30vh;
+    height: 200px;
 }
 
 .stored-scores-display {
@@ -176,6 +176,9 @@ header {
 @media screen and (min-width: 540px) {
     .small-screen-br {
         display: none;
+    }
+    .modal-image {
+        height: 300px;
     }
 }
 
