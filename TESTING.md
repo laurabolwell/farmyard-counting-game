@@ -60,8 +60,8 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Desktop | ![screenshot](documentation/testing/responsiveness-testing/desktop-main.png) | ![screenshot](documentation/testing/responsiveness-testing/desktop-start.png) |![screenshot](documentation/testing/responsiveness-testing/desktop-end.png) |![screenshot](documentation/testing/responsiveness-testing/desktop-scores.png) |Works as expected |
 | XL Monitor (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/monitor-xl-main.png) | ![screenshot](documentation/testing/responsiveness-testing/monitor-xl-start.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-xl-end.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-xl-scores.png) | Minor scaling issues |
 | 4K Monitor (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/monitor-4k-main.png) | ![screenshot](documentation/testing/responsiveness-testing/monitor-4k-start.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-4k-end.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-4k-scores.png) | Minor scaling issues |
-| iphone 11 (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/xs-mobile-main.png) | ![screenshot](documentation/testing/responsiveness-testing/xs-mobile-start.png) |![screenshot](documentation/testing/responsiveness-testing/xs-mobile-end.png) |![screenshot](documentation/testing/responsiveness-testing/xs-mobile-scores.png) |Works as expected |
-| ipad (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/xs-mobile-main.png) | ![screenshot](documentation/testing/responsiveness-testing/xs-mobile-start.png) |![screenshot](documentation/testing/responsiveness-testing/xs-mobile-end.png) |![screenshot](documentation/testing/responsiveness-testing/xs-mobile-scores.png) |Works as expected |
+| iphone 11 (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-main.png) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-start.png) |![screenshot](documentation/testing/responsiveness-testing/iphone11-end.png) |![screenshot](documentation/testing/responsiveness-testing/iphone-scores.png) |Works as expected |
+| ipad (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/ipad-main.png) | ![screenshot](documentation/testing/responsiveness-testing/ipad-start.png) |![screenshot](documentation/testing/responsiveness-testing/ipad-end.png) |![screenshot](documentation/testing/responsiveness-testing/ipad-scores.png) |Works as expected |
 
 ## Lighthouse Audit
 
@@ -205,66 +205,10 @@ This can be used for both "fixed" and "unresolved" issues.
 
 ## Bugs
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
-
-For JavaScript and Python applications, it's best to screenshot the errors to include them as well.
-
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
-
-    ![screenshot](documentation/bug01.png)
-
-    - To fix this, I _____________________.
-
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
-
-    ![screenshot](documentation/bug02.png)
-
-    - To fix this, I _____________________.
-
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bug04.png)
-
-    - To fix this, I _____________________.
-
 ### GitHub **Issues**
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+I have tracked bugs through the development process using github [issues](https://github.com/laurabolwell/farmyard-counting-game/issues).
 
-An improved way to manage bugs is to use the built-in **Issues** tracker on your GitHub repository.
-To access your Issues, click on the "Issues" tab at the top of your repository.
-Alternatively, use this link: https://github.com/laurabolwell/farmyard-counting-game/issues
-
-If using the Issues tracker for your bug management, you can simplify the documentation process.
-Issues allow you to directly paste screenshots into the issue without having to first save the screenshot locally,
-then uploading into your project.
-
-You can add labels to your issues (`bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s).
-
-Once you've sorted the issue, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following format:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 **Fixed Bugs**
 
@@ -272,59 +216,20 @@ All previously closed/fixed bugs can be tracked [here](https://github.com/laurab
 
 | Bug | Status |
 | --- | --- |
-| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/laurabolwell/farmyard-counting-game/issues/1) | Closed |
-| [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/laurabolwell/farmyard-counting-game/issues/2) | Closed |
-| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/laurabolwell/farmyard-counting-game/issues/3) | Closed |
+| [Clicks not registering after first question](https://github.com/laurabolwell/farmyard-counting-game/issues/1) | Closed |
+| [Score not updating on last question](https://github.com/laurabolwell/farmyard-counting-game/issues/2) | Closed |
+| [startGameModal not opening on page load](https://github.com/laurabolwell/farmyard-counting-game/issues/3) | Closed |
+| [Incorrect audio file not playing](https://github.com/laurabolwell/farmyard-counting-game/issues/4) | Closed |
+| [Correct answer audio not playing if 2 correct answers given in quick succession](https://github.com/laurabolwell/farmyard-counting-game/issues/5) | Closed |
+| [Game accepting clicks on options buttons after game has finished](https://github.com/laurabolwell/farmyard-counting-game/issues/6) | Closed |
+| [Modal toggle not working correctly](https://github.com/laurabolwell/farmyard-counting-game/issues/7) | Closed |
 
 **Open Issues**
 
-Any remaining open issues can be tracked [here](https://github.com/laurabolwell/farmyard-counting-game/issues).
-
-| Bug | Status |
-| --- | --- |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/laurabolwell/farmyard-counting-game/issues/4) | Open |
-| [Python `E501 line too long` (93 > 79 characters)](https://github.com/laurabolwell/farmyard-counting-game/issues/5) | Open |
+There are no remaining open [issues](https://github.com/laurabolwell/farmyard-counting-game/issues).
 
 ## Unfixed Bugs
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 There are no remaining bugs that I am aware of.
- 
+
+Return back to the [README.md](README.md) file.
