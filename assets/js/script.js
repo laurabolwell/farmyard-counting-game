@@ -33,27 +33,27 @@ document.addEventListener("DOMContentLoaded", function () {
 // If sound is NOT muted: stops the current audio and plays the button click audio
 function playButtonClickAudio() {
     if (!game.muted) {
-        $('.currentAudio')[0].load()
+        $('.currentAudio')[0].load();
         $('audio').removeClass('currentAudio');
         $('#buttonClickAudio')[0].play();
-        $('#buttonClickAudio').addClass('currentAudio')
+        $('#buttonClickAudio').addClass('currentAudio');
     }
 }
 
 // If sound is NOT muted: stops the current audio and plays the incorrect answer audio
 function playIncorrectAudio() {
     if (!game.muted) {
-        $('.currentAudio')[0].load()
+        $('.currentAudio')[0].load();
         $('audio').removeClass('currentAudio');
         $('#incorrectAudio')[0].play();
-        $('#incorrectAudio').addClass('currentAudio')
+        $('#incorrectAudio').addClass('currentAudio');
     }
 }
 
 // If sound is NOT muted: stops the current audio and plays the correct answer audio
 function playCorrectAudio() {
     if (!game.muted) {
-        $('.currentAudio')[0].load()
+        $('.currentAudio')[0].load();
         $('audio').removeClass('currentAudio');
         $('#correctAudio')[0].play();
         $('#correctAudio').addClass('currentAudio');
@@ -70,7 +70,7 @@ function playCheerAudio() {
 // If sound is NOT muted: stops the current audio and plays the audio of the animal in the current question
 function playAnimalSound() {
     if (!game.muted) {
-        $('.currentAudio')[0].load()
+        $('.currentAudio')[0].load();
         $('audio').removeClass('currentAudio');
         $(`#${game.currentAnimal}Audio`)[0].play();
         $(`#${game.currentAnimal}Audio`).addClass('currentAudio');
@@ -302,7 +302,7 @@ function updateStoredScores() {
             $('#newHighScore').append('<h3>New High Score!</h3>');
         }
         let easyTotal = ((localStorage.getItem('easyAverage') * localStorage.getItem('easyGames')) + game.correctAnswers);
-        let incrementEasyGames = Number(localStorage.getItem('easyGames')) + 1
+        let incrementEasyGames = Number(localStorage.getItem('easyGames')) + 1;
         localStorage.setItem("easyGames", incrementEasyGames);
         let average = easyTotal / localStorage.getItem('easyGames');
         localStorage.setItem("easyAverage", average);
@@ -312,7 +312,7 @@ function updateStoredScores() {
             localStorage.setItem("hardHighScore", game.correctAnswers);
         }
         let hardTotal = ((localStorage.getItem('hardAverage') * localStorage.getItem('hardGames')) + game.correctAnswers);
-        let incrementHardGames = Number(localStorage.getItem('hardGames')) + 1
+        let incrementHardGames = Number(localStorage.getItem('hardGames')) + 1;
         localStorage.setItem("hardGames", incrementHardGames);
         let average = hardTotal / localStorage.getItem('hardGames');
         localStorage.setItem("hardAverage", average);
@@ -321,12 +321,12 @@ function updateStoredScores() {
 
 // Updates the high scores and average scores on the high scores modal, average score is rounded to 1 decimal place
 function displayStoredScores() {
-    $('#easy-high').text(`${localStorage.getItem('easyHighScore')}`)
+    $('#easy-high').text(`${localStorage.getItem('easyHighScore')}`);
     let roundedEasyAverage = Math.round(localStorage.getItem('easyAverage') * 10) / 10;
-    $('#easy-average').text(`${roundedEasyAverage}`)
-    $('#hard-high').text(`${localStorage.getItem('hardHighScore')}`)
+    $('#easy-average').text(`${roundedEasyAverage}`);
+    $('#hard-high').text(`${localStorage.getItem('hardHighScore')}`);
     let roundedHardAverage = Math.round(localStorage.getItem('hardAverage') * 10) / 10;
-    $('#hard-average').text(`${roundedHardAverage}`)
+    $('#hard-average').text(`${roundedHardAverage}`);
 }
 
 // Resets all scores stored in local storage to 0
