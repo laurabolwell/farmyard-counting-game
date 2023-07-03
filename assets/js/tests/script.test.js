@@ -3,9 +3,8 @@
 */
 
 const { test, expect } = require("@jest/globals");
-const { game } = require("../script");
+const { game, playGame } = require("../script"); 
 const { beforeAll } = require("jest-circus");
-
 
 beforeAll(() => {
     let fs = require("fs");
@@ -48,7 +47,6 @@ describe ("playGame works correctly", () => {
         game.correctAnswers = 7;
         game.incorrectAnswers = 2;
         game.questionCount = 9;
-        document.getElementById("correct").innerText = 7;
         playGame();
     });
     test("should set correctAnswers to 0", () => {
@@ -61,3 +59,5 @@ describe ("playGame works correctly", () => {
         expect(game.questionCount).toEqual(0);
     });
 });
+
+

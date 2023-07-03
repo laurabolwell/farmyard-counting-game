@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688415840858" clover="3.2.0">
-  <project timestamp="1688415840859" name="All files">
-    <metrics statements="146" coveredstatements="3" conditionals="36" coveredconditionals="0" methods="30" coveredmethods="0" elements="212" coveredelements="3" complexity="0" loc="146" ncloc="146" packages="1" files="1" classes="1"/>
+<coverage generated="1688426173471" clover="3.2.0">
+  <project timestamp="1688426173471" name="All files">
+    <metrics statements="146" coveredstatements="3" conditionals="38" coveredconditionals="1" methods="30" coveredmethods="0" elements="214" coveredelements="4" complexity="0" loc="146" ncloc="146" packages="1" files="1" classes="1"/>
     <file name="script.js" path="/workspace/farmyard-counting-game/assets/js/script.js">
-      <metrics statements="146" coveredstatements="3" conditionals="36" coveredconditionals="0" methods="30" coveredmethods="0"/>
+      <metrics statements="146" coveredstatements="3" conditionals="38" coveredconditionals="1" methods="30" coveredmethods="0"/>
       <line num="4" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
       <line num="23" count="0" type="stmt"/>
@@ -149,7 +149,7 @@
       <line num="338" count="0" type="stmt"/>
       <line num="339" count="0" type="stmt"/>
       <line num="340" count="0" type="stmt"/>
-      <line num="343" count="1" type="stmt"/>
+      <line num="343" count="1" type="cond" truecount="1" falsecount="1"/>
     </file>
   </project>
 </coverage>

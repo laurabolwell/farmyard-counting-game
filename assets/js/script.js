@@ -340,4 +340,6 @@ function resetStoredScores() {
     displayStoredScores();
 }
 
-module.exports = { game, playGame };
+if (typeof module !== "undefined") module.exports = {
+    game, playGame
+};

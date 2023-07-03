@@ -60,7 +60,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Desktop | ![screenshot](documentation/testing/responsiveness-testing/desktop-main.png) | ![screenshot](documentation/testing/responsiveness-testing/desktop-start.png) |![screenshot](documentation/testing/responsiveness-testing/desktop-end.png) |![screenshot](documentation/testing/responsiveness-testing/desktop-scores.png) |Works as expected |
 | XL Monitor (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/monitor-xl-main.png) | ![screenshot](documentation/testing/responsiveness-testing/monitor-xl-start.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-xl-end.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-xl-scores.png) | Minor scaling issues |
 | 4K Monitor (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/monitor-4k-main.png) | ![screenshot](documentation/testing/responsiveness-testing/monitor-4k-start.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-4k-end.png) |![screenshot](documentation/testing/responsiveness-testing/monitor-4k-scores.png) | Minor scaling issues |
-| iphone 11 (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-main.png) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-start.png) |![screenshot](documentation/testing/responsiveness-testing/iphone11-end.png) |![screenshot](documentation/testing/responsiveness-testing/iphone-scores.png) |Works as expected |
+| iphone 11 (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-main.png) | ![screenshot](documentation/testing/responsiveness-testing/iphone11-start.png) |![screenshot](documentation/testing/responsiveness-testing/iphone11-end.png) |![screenshot](documentation/testing/responsiveness-testing/iphone11-scores.png) |Works as expected |
 | ipad (DevTools) | ![screenshot](documentation/testing/responsiveness-testing/ipad-main.png) | ![screenshot](documentation/testing/responsiveness-testing/ipad-start.png) |![screenshot](documentation/testing/responsiveness-testing/ipad-end.png) |![screenshot](documentation/testing/responsiveness-testing/ipad-scores.png) |Works as expected |
 
 ## Lighthouse Audit
@@ -121,7 +121,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## Automated Testing
 
-I have conducted a series of automated tests on my application.
+I have conducted some automated tests on my application. I have tested whether the game object contains the correct keys for the game to run and have also tested whether the playGame function correctly resets the correct answer, incorrect answer and question counters at the beginning of each game. 
 
 I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
@@ -141,7 +141,7 @@ Add Jest to a list called **Dev Dependencies** in a dev environment:
 
 **IMPORTANT**: Initial configurations
 
-When creating test files, the name of the file needs to be `file-name.test.js` in order for Jest to properly work.
+When creating test files, the name of the file needs to be `script.test.js` in order for Jest to properly work.
 
 Due to a change in Jest's default configuration, you'll need to add the following code to the top of the `.test.js` file:
 
@@ -151,7 +151,8 @@ Due to a change in Jest's default configuration, you'll need to add the followin
  */
 
 const { test, expect } = require("@jest/globals");
-const { function1, function2, function3, etc. } = require("../script-name");
+const { game, playGame } = require("../script"); 
+const { beforeAll } = require("jest-circus");
 
 beforeAll(() => {
     let fs = require("fs");
@@ -162,20 +163,14 @@ beforeAll(() => {
 });
 ```
 
-Remember to adjust the `fs.readFileSync()` to the specific file you'd like you test.
-The example above is testing the `index.html` file.
-
 Finally, at the bottom of the script file where your primary scripts are written, include the following at the bottom of the file.
 Make sure to include the name of all of your functions that are being tested in the `.test.js` file.
 
 ```js
 if (typeof module !== "undefined") module.exports = {
-    function1, function2, function3, etc.
+    game, playGame
 };
 ```
-
-Now that these steps have been undertaken, further tests can be written, and be expected to fail initially.
-Write JS code that can get the tests to pass as part of the Red-Green refactor process.
 
 Once ready, to run the tests, use this command:
 
@@ -189,19 +184,7 @@ Below are the results from the tests that I've written for this application:
 
 | Test Suites | Tests | Coverage | Screenshot |
 | --- | --- | --- | --- |
-| 1 passed | 16 passed | 55% | ![screenshot](documentation/js-test-coverage.png) |
-| x | x | x | repeat for all remaining tests |
-
-#### Jest Test Issues
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this section to list any known issues you ran into while writing your Jest tests.
-Remember to include screenshots (where possible), and a solution to the issue (if known).
-
-This can be used for both "fixed" and "unresolved" issues.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+| 1 passed | 11 passed | 2.66% | ![screenshot](documentation//testing/jest.png) |
 
 ## Bugs
 
