@@ -28,11 +28,21 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.menu, .sound, .reset, .difficulty').click(playButtonClickAudio);
     $('#startGameModal').modal('show');
     getLevel();
+    checkForStoredScores();
     displayStoredScores();
     $('.high-scores-btn').click(function() {
         $('#highScoreModal').modal('show');
     });
 });
+
+function checkForStoredScores() {
+    if (localStorage.getItem('easyHighScore') === null) {
+        localStorage.setItem('easyHighScore', 0);
+    }
+    if (localStorage.getItem('hardHighScore') === null) {
+        localStorage.setItem('hardHighScore', 0);
+    }
+}
 
 // If sound is NOT muted: stops the current audio and plays the button click audio
 function playButtonClickAudio() {
