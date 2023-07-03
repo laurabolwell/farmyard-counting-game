@@ -89,7 +89,7 @@ header {
     margin: 10px;
 }
 
-.scores:hover {
+.no-hover {
     pointer-events: none;
 }
 
