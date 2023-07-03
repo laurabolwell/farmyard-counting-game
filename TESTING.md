@@ -93,11 +93,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on option button (after 10th question) | No sound, no score incremented, endOfGameModal loads| Pass | |
 | End of Game Modal | | | | |
 | | Click outside of modal | Modal will not close | Pass | User forced to click 'Play Again!' and trigger the new game |
-| | Click on 'Play Again!' button | Modal closes and new game begins | Pass | |
+| | Click on 'Play Again!' button | Button click audio plays, modal closes and new game begins | Pass | |
 | High Scores Modal | | | | |
 | | Click outside of modal | Modal closes | Pass | Game continues as expected |
-| | Click 'Close' button | Modal closes | Pass | Game continues as expected |
-| | Click 'Reset High Scores' button | High scores all set to zero | Pass | High and average scores all set to 0 and instantly updated on modal|
+| | Click 'Close' button | Button click audio plays, modal closes | Pass | Game continues as expected |
+| | Click 'Reset High Scores' button | Button click audio plays, high scores all set to zero | Pass | High and average scores all set to 0 and instantly updated on modal|
 | | Click on 'High Scores' button (after 10th question but before endOfGameModal loads) | High score modal shows, then endOfGameModal still loads as expected | Pass | Need to click 'Play again' on endOfGameModal to trigger the new game and close the modal, when this happens the high scores modal is visible underneath with the updated score |
 
 
