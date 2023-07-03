@@ -12,13 +12,6 @@ let game = {
     muted: true
 };
 
-// localStorage.setItem("easyHighScore", 0);
-// localStorage.setItem("hardHighScore", 0);
-// localStorage.setItem("easyAverage", 0);
-// localStorage.setItem("hardAverage", 0);
-// localStorage.setItem("easyGames", 0);
-// localStorage.setItem("hardGames", 0);
-
 // Adds event listeners to reset, sound buttons and menu buttons, then launches the startGame modal
 document.addEventListener("DOMContentLoaded", function() {
     $('.sound').click(function() {
@@ -33,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.high-scores-btn').click(function() {
         $('#highScoreModal').modal('show');
     });
+    $('#reset-scores-btn').click(resetStoredScores);
 });
 
 function checkForStoredScores() {
@@ -42,6 +36,16 @@ function checkForStoredScores() {
     if (localStorage.getItem('hardHighScore') === null) {
         localStorage.setItem('hardHighScore', 0);
     }
+}
+
+function resetStoredScores() {
+localStorage.setItem("easyHighScore", 0);
+localStorage.setItem("hardHighScore", 0);
+localStorage.setItem("easyAverage", 0);
+localStorage.setItem("hardAverage", 0);
+localStorage.setItem("easyGames", 0);
+localStorage.setItem("hardGames", 0);
+displayStoredScores();
 }
 
 // If sound is NOT muted: stops the current audio and plays the button click audio

@@ -89,6 +89,10 @@ header {
     margin: 10px;
 }
 
+.scores:hover {
+    pointer-events: none;
+}
+
 /* Modals */
 
 .modal-background {

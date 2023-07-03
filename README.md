@@ -183,6 +183,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
     - Displays a high score for both levels of difficulty
     - Displays an average score for both levels of difficulty (rounded to one decimal place of accuracy)
     - Has a prominent close button at the bottom of the modal but this can also be closed by clicking anywhere on the screen
+    - Has a button to reset the high scores
 
 ![screenshot](documentation/features/high-scores-modal.png)
 
