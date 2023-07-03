@@ -339,3 +339,5 @@ function resetStoredScores() {
     localStorage.setItem("hardGames", 0);
     displayStoredScores();
 }
+
+module.exports = { game, playGame };

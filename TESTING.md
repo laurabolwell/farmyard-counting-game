@@ -127,11 +127,6 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 ### JavaScript (Jest Testing)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Adjust the code below (file names, etc.) to match your own project files/folders.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality.
 

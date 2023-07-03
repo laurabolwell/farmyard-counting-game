@@ -137,6 +137,7 @@ header {
 
 .modal-image {
     height: 200px;
+    width: auto;
 }
 
 .stored-scores-display {
@@ -179,6 +180,7 @@ header {
     }
     .modal-image {
         height: 300px;
+        width: auto;
     }
 }
 
