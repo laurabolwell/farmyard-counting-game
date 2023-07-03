@@ -5,6 +5,7 @@
     --green: #67C93E;
 }
 
+/* Whole Page Background */
 body {
     margin: 0;
     width: 100vw;
@@ -17,10 +18,12 @@ body {
     font-family: 'Short Stack', cursive;
 }
 
+
 header {
     height: 10vh;
 }
 
+/* Menu Button */
 .menu {
     position: fixed;
     top: 0;
@@ -28,6 +31,7 @@ header {
     margin: 10px;
 }
 
+/* Sound/ Mute Button */
 .sound {
     position: fixed;
     top: 0;
@@ -35,14 +39,17 @@ header {
     margin: 10px;
 }
 
+/* Hidden class to hide non-active sound button */
 .hidden {
     display: none;
 }
 
+/* Main Game Area */
 .game-area {
     height: 80vh;
 }
 
+/* Question Area: Animal images displayed here using javascript */
 #question-area {
     height: 80vh;
     display: flex;
@@ -52,11 +59,13 @@ header {
     padding-top: 50px;
 }
 
+/* Animal images */
 .img-fluid {
     max-width: 33%;
     max-height: 30%;
 }
 
+/* Answer options buttons */
 #options-area {
     height: 80vh;
     display: flex;
@@ -65,13 +74,7 @@ header {
     align-content: center;
 }
 
-.high-scores-btn {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    margin: 10px;
-}
-
+/* Score Area */
 .score-area {
     display: flex;
     flex-flow: row wrap;
@@ -79,8 +82,17 @@ header {
     font-size: 2rem;
 }
 
+/* Button to show high score modal */
+.high-scores-btn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 10px;
+}
+
+/* Thumbs up/down icons */
 .score-area i {
-    size: 30px;
+    font-size: 25px;
     padding-right: 10px;
     margin: 0;
 }
@@ -89,6 +101,7 @@ header {
     margin: 10px;
 }
 
+/* Removes bootstrap hover effects on scores */
 .no-hover {
     pointer-events: none;
 }
@@ -104,36 +117,6 @@ header {
     border: none;
     padding-bottom: 8px;
     display: block;
-}
-
-.modal-image {
-    height: 30vh;
-    background: 
-}
-
-.view-scores {
-    padding: 6px;
-}
-
-.stored-scores-display {
-    font-size: smaller;
-}
-
-#stars {
-    font-size: x-large;
-    padding-top: 16px;
-}
-
-#trophy img {
-    height: 40vh;
-}
-
-#trophy {
-    height: 50vh;
-    width: 50vh;
-    background: var(--green);
-    border-radius: 50%;
-    padding-top: 6vh;
 }
 
 .modal-body {
@@ -152,8 +135,36 @@ header {
     padding-top: 8px;
 }
 
+.modal-image {
+    height: 30vh;
+}
+
+.stored-scores-display {
+    font-size: smaller;
+}
+
+/* End of game modal */
+#stars {
+    font-size: x-large;
+    padding-top: 16px;
+}
+
+#trophy img {
+    height: 40vh;
+}
+
+#trophy {
+    height: 50vh;
+    width: 50vh;
+    background: var(--green);
+    border-radius: 50%;
+    padding-top: 6vh;
+}
+
+
 /* Media Queries */
 
+/* Adjusts the size of the animal images */
 @media screen and (max-width: 480px) {
     .img-fluid {
         max-width: 50%;
@@ -161,18 +172,20 @@ header {
     }
 }
 
-@media screen and (min-width: 530px) {
+/* Adds a line break on the high scores button on small screens */
+@media screen and (min-width: 540px) {
     .small-screen-br {
         display: none;
     }
 }
-
-@media screen and (max-width: 530px) {
+/* Makes the font-size smaller on the high scores button on small screens */
+@media screen and (max-width: 540px) {
     .high-scores-btn {
         font-size: small;
     }
 }
 
+/* Adjusts the padding of score area for small screens */
 @media screen and (max-width: 450px) {
     .scores {
         padding: 8px;
@@ -181,6 +194,7 @@ header {
     }
 }
 
+/* Adjusts the padding of score area for very small screens */
 @media screen and (max-width: 360px) {
     .score-area i {
         padding-right: 0px;
