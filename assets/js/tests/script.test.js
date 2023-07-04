@@ -1,10 +1,18 @@
 /** 
-* @jest-environment jsdom
-*/
+ * @jest-environment jsdom
+ */
 
-const { test, expect } = require("@jest/globals");
-const { game, playGame } = require("../script"); 
-const { beforeAll } = require("jest-circus");
+const {
+    test,
+    expect
+} = require("@jest/globals");
+const {
+    game,
+    playGame
+} = require("../script");
+const {
+    beforeAll
+} = require("jest-circus");
 
 beforeAll(() => {
     let fs = require("fs");
@@ -13,7 +21,6 @@ beforeAll(() => {
     document.write(fileContents);
     document.close();
 });
-
 
 describe("game object contains correct keys", () => {
     test("level key exists", () => {
@@ -42,7 +49,7 @@ describe("game object contains correct keys", () => {
     });
 });
 
-describe ("playGame works correctly", () => {
+describe("playGame works correctly", () => {
     beforeAll(() => {
         game.correctAnswers = 7;
         game.incorrectAnswers = 2;
@@ -59,5 +66,3 @@ describe ("playGame works correctly", () => {
         expect(game.questionCount).toEqual(0);
     });
 });
-
-
