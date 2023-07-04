@@ -310,6 +310,7 @@ function updateStoredScores() {
     if (game.level == 10) {
         if (game.correctAnswers > localStorage.getItem('hardHighScore')) {
             localStorage.setItem("hardHighScore", game.correctAnswers);
+            $('#newHighScore').append('<h3>New High Score!</h3>');
         }
         let hardTotal = ((localStorage.getItem('hardAverage') * localStorage.getItem('hardGames')) + game.correctAnswers);
         let incrementHardGames = Number(localStorage.getItem('hardGames')) + 1;
