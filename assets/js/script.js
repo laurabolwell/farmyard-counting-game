@@ -341,5 +341,6 @@ function resetStoredScores() {
 }
 
 if (typeof module !== "undefined") module.exports = {
-    game, playGame
+    game,
+    playGame
 };
