@@ -6,7 +6,7 @@ The game is designed to be fully responsive, allowing it to be played on a wide 
 
 ![screenshot](documentation/amiresponsive-screenshot.png)
 
-I used http://ui.dev/amiresponsive[http://ui.dev/amiresponsive](https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game) to create this image.
+I used [http://ui.dev/amiresponsive](https://ui.dev/amiresponsive?url=https://laurabolwell.github.io/farmyard-counting-game) to create this image.
 
 ## UX
 
@@ -118,7 +118,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 - **Start of Game Modal**
 
-    - This modal pops up when the page is loaded.+
+    - This modal pops up when the page is loaded.
     - Gives the user the choice of 2 levels of difficulty
     - Has no close button and has a static backdrop so that the user cannot progress without choosing a level of difficulty
     - Minimal text and a large obvious button for each level so that children can proceed with the game even if parents are not present to select the level

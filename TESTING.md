@@ -67,7 +67,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/testing/lighthouse-testing/lighthouse-mobile.png) | No major issues |
+| Home | Mobile | ![screenshot](documentation/testing/lighthouse-testing/lighthouse-mobile.png) | Some performance issues |
 | Home | Desktop | ![screenshot](documentation/testing/lighthouse-testing/lighthouse-desktop.png) | No major issues |
 
 ## Defensive Programming
@@ -98,7 +98,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click outside of modal | Modal closes | Pass | Game continues as expected |
 | | Click 'Close' button | Button click audio plays, modal closes | Pass | Game continues as expected |
 | | Click 'Reset High Scores' button | Button click audio plays, high scores all set to zero | Pass | High and average scores all set to 0 and instantly updated on modal|
-| | Click 'High scores' button during gameplay | Button click audio plays, high scores modal shows. Game continues as expected when modal closed | Pass | |
+| | Click 'High scores' button during gameplay | Button click audio plays, high scores modal shows | Pass | Game continues as expected when modal closed |
 | | Click on 'High Scores' button (after 10th question but before endOfGameModal loads) | High score modal shows, then endOfGameModal still loads as expected | Pass | Need to click 'Play again' on endOfGameModal to trigger the new game and close the modal, when this happens the high scores modal is visible underneath with the updated score |
 
 
@@ -131,7 +131,7 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality.
 
-In order to work with Jest, I first had to initialize NPM.
+In order to work with Jest, first you have to initialize NPM.
 
 - `npm init`
 - Hit `enter` for all options, except for **test command:**, just type `jest`.
