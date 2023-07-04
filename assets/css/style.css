@@ -178,6 +178,7 @@ header {
     .small-screen-br {
         display: none;
     }
+
     .modal-image {
         height: 300px;
         width: auto;
@@ -205,6 +206,7 @@ header {
     .score-area i {
         padding-right: 0px;
     }
+
     .scores {
         padding: 8px 2px;
     }
